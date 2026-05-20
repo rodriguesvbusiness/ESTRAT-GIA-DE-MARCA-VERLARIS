@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verlaris — Relatório Estratégico de Marca 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & TOKENS ──────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --navy:      #0D2B45;
+  --navy2:     #1A3A5C;
+  --gold:      #C8A96E;
+  --gold2:     #E8D5A3;
+  --sand:      #F5EFE0;
+  --cream:     #FAF8F4;
+  --white:     #FFFFFF;
+  --ink:       #111111;
+  --gray:      #6B6B6B;
+  --gray2:     #ADADAD;
+  --line:      #E8E4DC;
+  --serif:     'Cormorant Garamond', Georgia, serif;
+  --sans:      'DM Sans', system-ui, sans-serif;
+  --r8:        8px;
+  --r12:       12px;
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; }
+
+/* ─── NAV ─────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  height: 52px; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 40px;
+  background: rgba(13,43,69,.97); backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(200,169,110,.2);
+}
+.nav-logo { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--gold); letter-spacing: .1em; }
+.nav-items { display: flex; gap: 4px; }
+.nav-items a {
+  font-size: 10px; font-weight: 500; letter-spacing: .08em;
+  color: rgba(255,255,255,.5); text-decoration: none;
+  padding: 5px 12px; border-radius: 20px; transition: all .18s;
+}
+.nav-items a:hover { color: var(--gold); background: rgba(200,169,110,.12); }
+
+/* ─── SEÇÕES / SLIDES ─────────────────────────────── */
+section {
+  min-height: 100vh; width: 100%;
+  padding: 96px 72px 72px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.slide-tag {
+  position: absolute; top: 68px; left: 72px;
+  font-size: 10px; font-weight: 600; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 10px;
+}
+.slide-tag::before { content:''; width: 20px; height: 1px; background: var(--gold); }
+.slide-num {
+  position: absolute; bottom: 28px; right: 72px;
+  font-size: 11px; color: var(--gray2); letter-spacing: .08em;
+}
+
+/* ─── TIPOGRAFIA ──────────────────────────────────── */
+.display {
+  font-family: var(--serif); font-weight: 700; line-height: 1;
+  letter-spacing: -.02em;
+}
+.d-hero   { font-size: clamp(72px,8vw,120px); }
+.d-xl     { font-size: clamp(48px,5.5vw,72px); }
+.d-lg     { font-size: clamp(36px,4vw,52px); }
+.d-md     { font-size: clamp(26px,3vw,36px); }
+.d-sm     { font-size: clamp(18px,2vw,24px); }
+.body-lg  { font-size: 15px; line-height: 1.85; }
+.body-md  { font-size: 13px; line-height: 1.8; }
+.body-sm  { font-size: 12px; line-height: 1.75; }
+.caption  { font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+
+/* ─── CORES ───────────────────────────────────────── */
+.bg-navy  { background: var(--navy); }
+.bg-sand  { background: var(--sand); }
+.bg-cream { background: var(--cream); }
+.bg-white { background: var(--white); }
+.c-white  { color: var(--white); }
+.c-gold   { color: var(--gold); }
+.c-navy   { color: var(--navy); }
+.c-gray   { color: var(--gray); }
+
+/* ─── UTILS ───────────────────────────────────────── */
+.divider { width: 40px; height: 2px; background: var(--gold); margin: 20px 0; }
+.divider-full { width: 100%; height: 1px; background: var(--line); margin: 32px 0; }
+.tag {
+  display: inline-flex; align-items: center;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 10px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.tag-navy { background: var(--navy); color: var(--gold); }
+.tag-gold { background: rgba(200,169,110,.15); color: #8B6A20; border: 1px solid rgba(200,169,110,.3); }
+.tag-line { background: transparent; color: var(--gray); border: 1px solid var(--line); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.grid4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+
+/* card base */
+.card {
+  padding: 28px 28px; border-radius: var(--r12);
+  display: flex; flex-direction: column; gap: 14px;
+}
+.card-navy { background: var(--navy); }
+.card-sand { background: var(--sand); border: 1px solid var(--line); }
+.card-white { background: var(--white); border: 1px solid var(--line); }
+.card-gold { background: rgba(200,169,110,.08); border: 1px solid rgba(200,169,110,.25); }
+.card-outline { background: transparent; border: 1px solid var(--line); }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 00 — CAPA
+════════════════════════════════════════════════════ */
+#s00 {
+  background: var(--navy);
+  justify-content: space-between;
+  padding: 80px 72px 60px;
+}
+#s00::before {
+  content:''; position: absolute;
+  top:-240px; right:-240px;
+  width:700px; height:700px;
+  background: radial-gradient(circle, rgba(200,169,110,.1) 0%, transparent 65%);
+  border-radius:50%; pointer-events:none;
+}
+#s00::after {
+  content:''; position: absolute;
+  bottom:-120px; left:-80px;
+  width:400px; height:400px;
+  background: radial-gradient(circle, rgba(200,169,110,.06) 0%, transparent 70%);
+  border-radius:50%; pointer-events:none;
+}
+.capa-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.capa-brand { z-index:1; }
+.capa-brand .eyebrow {
+  font-size: 10px; font-weight: 600; letter-spacing: .25em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 20px;
+}
+.capa-brand .title { color: var(--white); line-height: .88; }
+.capa-brand .subtitle {
+  font-family: var(--serif); font-size: 22px; font-weight: 300;
+  letter-spacing: .35em; color: rgba(255,255,255,.35);
+  margin-top: 12px; text-transform: uppercase;
+}
+.capa-meta { z-index:1; text-align: right; display: flex; flex-direction: column; gap: 6px; }
+.capa-meta .m-label { font-size: 9px; font-weight: 600; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+.capa-meta .m-val   { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 8px; }
+.capa-middle {
+  z-index:1;
+  border-top: 1px solid rgba(200,169,110,.2);
+  border-bottom: 1px solid rgba(200,169,110,.2);
+  padding: 36px 0; margin: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+}
+.capa-tagline {
+  font-family: var(--serif); font-size: 32px; font-weight: 300;
+  font-style: italic; color: var(--gold); line-height: 1.4;
+}
+.capa-desc { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.85; }
+.capa-bottom { z-index:1; display: flex; justify-content: space-between; align-items: flex-end; }
+.studio { display: flex; flex-direction: column; gap: 4px; }
+.studio .s-label { font-size: 9px; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+.studio .s-name  { font-size: 14px; color: rgba(255,255,255,.55); font-weight: 500; }
+.capa-index { display: flex; gap: 20px; }
+.ci { font-size: 10px; color: rgba(255,255,255,.3); letter-spacing: .08em; }
+
+/* ════════════════════════════════════════════════════
+   SEÇÃO HEADER (separadores de seção)
+════════════════════════════════════════════════════ */
+.sec-header {
+  min-height: 40vh !important;
+  padding: 60px 72px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 60px !important;
+  justify-content: flex-start !important;
+}
+.sec-letter {
+  font-family: var(--serif); font-size: 140px; font-weight: 700;
+  color: rgba(200,169,110,.15); line-height: 1; flex-shrink: 0;
+  letter-spacing: -.04em;
+}
+.sec-info { display: flex; flex-direction: column; gap: 12px; }
+.sec-info .sec-label { font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
+.sec-info .sec-title { font-family: var(--serif); font-size: 44px; font-weight: 700; line-height: 1.1; }
+.sec-info .sec-desc  { font-size: 14px; color: rgba(255,255,255,.5); max-width: 500px; line-height: 1.75; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 01 — ABERTURA / CONTEXTO
+════════════════════════════════════════════════════ */
+#s01 { background: var(--cream); }
+.s01-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 0; min-height: 65vh; }
+.s01-col {
+  padding: 0 40px 0 0;
+  border-right: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 24px;
+}
+.s01-col:last-child { border-right: none; padding-right: 0; padding-left: 40px; }
+.s01-col:nth-child(2) { padding-left: 40px; }
+.s01-headline { font-family: var(--serif); font-size: 40px; font-weight: 700; color: var(--navy); line-height: 1.15; }
+.s01-quote {
+  margin-top: auto;
+  padding: 22px 24px;
+  background: var(--navy); border-radius: var(--r12);
+  font-family: var(--serif); font-size: 18px; font-style: italic;
+  color: var(--gold); line-height: 1.5;
+}
+
+/* ════════════════════════════════════════════════════
+   SLIDE 02 — ORIGEM
+════════════════════════════════════════════════════ */
+#s02 { background: var(--white); }
+.origem-grid { display: flex; flex-direction: column; gap: 20px; margin-top: 16px; }
+.origem-item {
+  display: grid; grid-template-columns: 52px 1fr;
+  gap: 24px; align-items: flex-start;
+  padding: 28px 32px;
+  border-radius: var(--r12);
+}
+.origem-item:nth-child(1) { background: rgba(13,43,69,.04); border: 1px solid rgba(13,43,69,.08); }
+.origem-item:nth-child(2) { background: var(--navy); }
+.origem-item:nth-child(3) { background: rgba(200,169,110,.07); border: 1px solid rgba(200,169,110,.2); }
+.origem-num {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 22px; font-weight: 700;
+  flex-shrink: 0;
+}
+.origem-item:nth-child(1) .origem-num { background: var(--navy); color: var(--white); }
+.origem-item:nth-child(2) .origem-num { background: var(--gold); color: var(--navy); }
+.origem-item:nth-child(3) .origem-num { background: var(--navy); color: var(--gold); }
+.origem-body { display: flex; flex-direction: column; gap: 8px; }
+.origem-title { font-size: 14px; font-weight: 700; }
+.origem-item:nth-child(1) .origem-title { color: var(--navy); }
+.origem-item:nth-child(2) .origem-title { color: var(--gold); }
+.origem-item:nth-child(3) .origem-title { color: var(--navy); }
+.origem-text { font-size: 13px; line-height: 1.8; }
+.origem-item:nth-child(2) .origem-text { color: rgba(255,255,255,.7); }
+.origem-item:nth-child(1) .origem-text,
+.origem-item:nth-child(3) .origem-text { color: var(--gray); }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 03 — MVV
+════════════════════════════════════════════════════ */
+#s03 { background: var(--cream); }
+.mvv-layout { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 20px; margin-top: 16px; }
+.mvv-missao { background: var(--navy); border-radius: var(--r12); padding: 32px; }
+.mvv-visao  { background: var(--sand); border: 1px solid var(--line); border-radius: var(--r12); padding: 32px; }
+.mvv-valores {
+  grid-column: 1 / -1;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--r12); padding: 32px;
+}
+.mvv-label { font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 12px; }
+.mvv-missao .mvv-label { color: var(--gold); }
+.mvv-visao  .mvv-label { color: var(--navy); }
+.mvv-valores .mvv-label { color: var(--gray); }
+.mvv-text { font-size: 14px; line-height: 1.85; }
+.mvv-missao .mvv-text { color: rgba(255,255,255,.8); }
+.mvv-visao  .mvv-text { color: var(--ink); }
+.valores-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 16px; }
+.valor { display: flex; flex-direction: column; gap: 8px; }
+.valor-name {
+  font-size: 13px; font-weight: 600; color: var(--navy);
+  display: flex; align-items: center; gap: 8px;
+}
+.valor-name::before { content:''; width:8px; height:8px; background:var(--gold); border-radius:50%; flex-shrink:0; }
+.valor-desc { font-size: 12px; color: var(--gray); line-height: 1.7; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 04 — CÍRCULO DOURADO
+════════════════════════════════════════════════════ */
+#s04 { background: var(--white); }
+.gc-layout { display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: center; margin-top: 20px; }
+/* diagrama visual */
+.gc-diagram { position: relative; width: 260px; height: 260px; margin: 0 auto; flex-shrink:0; }
+.gc-ring {
+  position: absolute; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-weight: 700; letter-spacing: .05em;
+}
+.gc-ring-1 { inset:0; background:rgba(13,43,69,.06); border:1px solid rgba(13,43,69,.12); color:var(--gray); font-size:11px; }
+.gc-ring-2 { inset:36px; background:rgba(13,43,69,.1); border:1px solid rgba(13,43,69,.2); color:var(--navy2); font-size:12px; }
+.gc-ring-3 { inset:80px; background:var(--navy); color:var(--gold); font-size:10px; text-align:center; flex-direction:column; gap:2px; }
+.gc-label-outer { position:absolute; }
+.gc-label-outer.o { top:8px; left:50%; transform:translateX(-50%); }
+.gc-label-outer.m { top:50%; right:4px; transform:translateY(-50%); }
+.gc-label-outer.i { top:50%; left:50%; transform:translate(-50%,-50%); }
+/* cards */
+.gc-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.gc-card { padding: 26px 22px; border-radius: var(--r12); display: flex; flex-direction: column; gap: 14px; }
+.gc-what { background: rgba(13,43,69,.04); border: 1px solid rgba(13,43,69,.1); }
+.gc-how  { background: rgba(200,169,110,.07); border: 1px solid rgba(200,169,110,.2); }
+.gc-why  { background: var(--navy); }
+.gc-en   { font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.gc-what .gc-en { color: var(--gray2); }
+.gc-how  .gc-en { color: var(--gold); }
+.gc-why  .gc-en { color: rgba(255,255,255,.4); }
+.gc-pt   { font-family: var(--serif); font-size: 30px; font-weight: 700; }
+.gc-what .gc-pt { color: var(--navy); }
+.gc-how  .gc-pt { color: var(--navy); }
+.gc-why  .gc-pt { color: var(--gold); }
+.gc-txt  { font-size: 13px; line-height: 1.8; }
+.gc-what .gc-txt { color: var(--gray); }
+.gc-how  .gc-txt { color: var(--ink); }
+.gc-why  .gc-txt { color: rgba(255,255,255,.7); }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 05 — PORTFÓLIO
+════════════════════════════════════════════════════ */
+#s05 { background: var(--cream); }
+.port-table { width: 100%; border-collapse: collapse; margin-top: 20px; border-radius: var(--r12); overflow: hidden; }
+.port-table th {
+  background: var(--navy); color: var(--gold);
+  font-size: 10px; font-weight: 600; letter-spacing: .15em;
+  text-transform: uppercase; padding: 16px 20px; text-align: left;
+}
+.port-table td { padding: 20px 20px; font-size: 13px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.port-table tr:last-child td { border: none; }
+.port-table tr:nth-child(odd) td { background: rgba(13,43,69,.02); }
+.port-table tr:nth-child(even) td { background: var(--white); }
+.port-num {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--navy);
+  color: var(--white); font-family: var(--serif); font-size: 15px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.port-nome { font-weight: 600; color: var(--navy); }
+.fase-agora { background: rgba(13,43,69,.1); color: var(--navy); }
+.fase-breve { background: rgba(200,169,110,.15); color: #7A5B0A; }
+
+/* ════════════════════════════════════════════════════
+   SLIDES 07-08 — ENTREGAS
+════════════════════════════════════════════════════ */
+#s07, #s08 { background: var(--white); }
+#s08 { background: var(--cream); }
+.ent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+.ent-card {
+  padding: 28px 28px; border-radius: var(--r12);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.ent-func { background: rgba(13,43,69,.04); border: 1px solid rgba(13,43,69,.08); }
+.ent-emoc { background: rgba(200,169,110,.07); border: 1px solid rgba(200,169,110,.2); }
+.ent-icon { font-size: 26px; }
+.ent-name { font-size: 15px; font-weight: 600; color: var(--navy); }
+.ent-emoc .ent-name { color: #7A5B0A; }
+.ent-desc { font-size: 13px; color: var(--gray); line-height: 1.75; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 09 — PERSONALIDADE
+════════════════════════════════════════════════════ */
+#s09 {
+  background: var(--cream); padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr 1fr !important;
+  align-items: stretch; flex-direction: unset !important;
+  justify-content: unset !important;
+}
+.pers-col {
+  padding: 88px 36px 72px;
+  display: flex; flex-direction: column; gap: 24px;
+  border-right: 1px solid var(--line);
+}
+.pers-col:last-child { border-right: none; }
+.pers-col-0 { background: var(--navy); }
+.pc-label { font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 4px; }
+.pers-col-0 .pc-label { color: var(--gold); }
+.pers-col-0 .pc-label + * { color: rgba(255,255,255,.6); }
+.tr-item { display: flex; flex-direction: column; gap: 6px; }
+.tr-name { font-size: 14px; font-weight: 700; border-bottom: 1px solid; padding-bottom: 8px; }
+.pers-col-0 .tr-name { color: var(--gold); border-color: rgba(200,169,110,.3); }
+.pers-col:not(.pers-col-0) .tr-name { color: var(--navy); border-color: var(--line); }
+.tr-desc { font-size: 12px; line-height: 1.7; }
+.pers-col-0 .tr-desc { color: rgba(255,255,255,.6); }
+.pers-col:not(.pers-col-0) .tr-desc { color: var(--gray); }
+.sintese-card {
+  margin-top: auto; padding: 18px 20px;
+  background: rgba(200,169,110,.1); border: 1px solid rgba(200,169,110,.25);
+  border-radius: var(--r8); font-size: 12px; font-style: italic;
+  color: var(--navy); line-height: 1.7;
+}
+
+/* ════════════════════════════════════════════════════
+   SLIDE 10 — TERRITÓRIO
+════════════════════════════════════════════════════ */
+#s10 { background: var(--sand); justify-content: center; }
+.terr-main {
+  font-family: var(--serif); font-size: clamp(32px,4vw,52px);
+  font-weight: 700; color: var(--navy); line-height: 1.2; max-width: 900px;
+  margin-bottom: 40px;
+}
+.terr-main em { font-style: italic; color: var(--gold); }
+.terr-sub {
+  font-size: 15px; color: var(--gray); max-width: 720px;
+  line-height: 1.85; padding-top: 32px; border-top: 1px solid rgba(13,43,69,.12);
+}
+.terr-sub strong { color: var(--navy); font-weight: 600; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 12 — BANDEIRAS
+════════════════════════════════════════════════════ */
+#s12 { background: var(--white); }
+.band-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+.band-card {
+  padding: 28px 32px; border-radius: var(--r12);
+  border: 1px solid var(--line); background: var(--white);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px 28px;
+  transition: border-color .2s;
+}
+.band-card:hover { border-color: var(--navy); }
+.band-num {
+  grid-column: 1 / -1;
+  font-family: var(--serif); font-size: 44px; font-weight: 700;
+  color: rgba(13,43,69,.07); line-height: 1;
+}
+.band-title { grid-column: 1 / -1; font-size: 15px; font-weight: 700; color: var(--navy); margin-top: -12px; }
+.band-col { display: flex; flex-direction: column; gap: 6px; }
+.band-lbl { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.band-txt { font-size: 12px; color: var(--gray); line-height: 1.7; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 14 — DIFERENCIAIS
+════════════════════════════════════════════════════ */
+#s14 { background: var(--cream); }
+.dif-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 16px; }
+.dif-card { padding: 32px 28px; border-radius: var(--r12); display: flex; flex-direction: column; gap: 20px; min-height: 320px; }
+.dif-1 { background: rgba(13,43,69,.04); border: 1px solid rgba(13,43,69,.1); }
+.dif-2 { background: var(--navy); }
+.dif-3 { background: rgba(200,169,110,.07); border: 1px solid rgba(200,169,110,.2); }
+.dif-n { font-family: var(--serif); font-size: 52px; font-weight: 700; line-height: 1; }
+.dif-1 .dif-n, .dif-3 .dif-n { color: rgba(13,43,69,.12); }
+.dif-2 .dif-n { color: rgba(200,169,110,.18); }
+.dif-t { font-size: 15px; font-weight: 700; margin-top: -16px; }
+.dif-1 .dif-t, .dif-3 .dif-t { color: var(--navy); }
+.dif-2 .dif-t { color: var(--gold); }
+.dif-lbl { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 4px; }
+.dif-1 .dif-lbl, .dif-3 .dif-lbl { color: var(--navy); }
+.dif-2 .dif-lbl.oque { color: var(--gold); }
+.dif-2 .dif-lbl.unico { color: rgba(255,255,255,.4); }
+.dif-p { font-size: 12px; line-height: 1.78; }
+.dif-1 .dif-p, .dif-3 .dif-p { color: var(--gray); }
+.dif-2 .dif-p { color: rgba(255,255,255,.68); }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 16 — DECLARAÇÃO VISUAL
+════════════════════════════════════════════════════ */
+#s16 {
+  background: var(--navy); align-items: center;
+  text-align: center; gap: 24px;
+}
+#s16::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(200,169,110,.1) 0%, transparent 65%);
+  pointer-events:none;
+}
+.decl-brand { font-size: 10px; font-weight: 600; letter-spacing: .28em; color: var(--gold); text-transform: uppercase; }
+.decl-name  { font-family: var(--serif); font-size: clamp(80px,9vw,130px); font-weight: 700; color: var(--white); line-height: .88; letter-spacing: -.03em; }
+.decl-tag   { font-family: var(--serif); font-size: 22px; font-style: italic; font-weight: 300; color: var(--gold); }
+.decl-formal {
+  max-width: 740px; font-size: 15px; color: rgba(255,255,255,.58);
+  line-height: 1.9; padding: 28px 36px;
+  border: 1px solid rgba(200,169,110,.2); border-radius: var(--r12);
+}
+
+/* ════════════════════════════════════════════════════
+   SLIDE 17 — ANÁLISE DECLARAÇÃO
+════════════════════════════════════════════════════ */
+#s17 { background: var(--cream); }
+.anal-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 16px; }
+.anal-card {
+  padding: 26px 22px; border-radius: var(--r12);
+  background: var(--white); border: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform .2s, border-color .2s;
+}
+.anal-card:hover { transform: translateY(-4px); border-color: var(--navy); }
+.anal-word { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--navy); }
+.anal-txt  { font-size: 13px; color: var(--gray); line-height: 1.75; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 18 — COMO APLICAR
+════════════════════════════════════════════════════ */
+#s18 { background: var(--white); }
+.aplic-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 16px; }
+.aplic-card { padding: 32px 28px; border-radius: var(--r12); display: flex; flex-direction: column; gap: 14px; }
+.aplic-1 { background: var(--navy); }
+.aplic-2 { background: rgba(13,43,69,.04); border: 1px solid rgba(13,43,69,.1); }
+.aplic-3 { background: rgba(200,169,110,.07); border: 1px solid rgba(200,169,110,.2); }
+.aplic-lbl { font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+.aplic-1 .aplic-lbl { color: var(--gold); }
+.aplic-2 .aplic-lbl { color: var(--navy); }
+.aplic-3 .aplic-lbl { color: #7A5B0A; }
+.aplic-txt { font-size: 13px; line-height: 1.8; }
+.aplic-1 .aplic-txt { color: rgba(255,255,255,.7); }
+.aplic-2 .aplic-txt, .aplic-3 .aplic-txt { color: var(--gray); }
+.ht {
+  margin-top: auto; display: inline-flex; padding: 6px 14px;
+  border-radius: 20px; font-size: 12px; font-weight: 600;
+}
+.aplic-1 .ht { background: rgba(200,169,110,.15); color: var(--gold); }
+.aplic-2 .ht { background: rgba(13,43,69,.08); color: var(--navy); }
+.aplic-3 .ht { background: rgba(200,169,110,.12); color: #7A5B0A; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 21 — PERSONA
+════════════════════════════════════════════════════ */
+#s21 { background: var(--cream); }
+.pers-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 16px; }
+.persona-card {
+  background: var(--navy); border-radius: var(--r12); padding: 32px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.persona-name { font-family: var(--serif); font-size: 30px; font-weight: 700; color: var(--white); }
+.persona-bio  { font-size: 13px; color: rgba(255,255,255,.58); line-height: 1.75; }
+.persona-data { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pd-item { display: flex; flex-direction: column; gap: 2px; }
+.pd-lbl { font-size: 9px; font-weight: 600; letter-spacing: .15em; color: var(--gold); text-transform: uppercase; }
+.pd-val { font-size: 13px; color: rgba(255,255,255,.75); }
+.persona-quote {
+  padding: 16px 20px; border: 1px solid rgba(200,169,110,.25);
+  border-radius: var(--r8); font-family: var(--serif); font-size: 16px;
+  font-style: italic; color: var(--gold); line-height: 1.55;
+}
+.persona-attrs { display: flex; flex-direction: column; gap: 14px; }
+.pa-card {
+  padding: 16px 20px; border-radius: var(--r8);
+  background: var(--white); border: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.pa-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--navy); }
+.pa-val { font-size: 13px; color: var(--gray); line-height: 1.6; }
+.persona-insight {
+  padding: 20px 24px; background: var(--navy); border-radius: var(--r12);
+  font-size: 14px; color: rgba(255,255,255,.68); line-height: 1.8;
+}
+.persona-insight strong { color: var(--gold); }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 22 — TOM DE VOZ
+════════════════════════════════════════════════════ */
+#s22 { background: var(--white); }
+.tom-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 16px; }
+.tom-meta {
+  padding: 22px 26px; background: var(--navy); border-radius: var(--r12);
+  font-family: var(--serif); font-size: 16px; font-style: italic;
+  color: rgba(255,255,255,.7); line-height: 1.6; margin-bottom: 20px;
+}
+.tom-attrs { display: flex; flex-direction: column; gap: 14px; }
+.tom-item {
+  display: grid; grid-template-columns: 140px 1fr;
+  gap: 16px; padding: 18px 22px;
+  border-radius: var(--r8); border: 1px solid var(--line); align-items: start;
+}
+.tom-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+.tom-desc { font-size: 12px; color: var(--gray); line-height: 1.7; }
+.tom-nao {
+  padding: 18px 22px; background: rgba(180,20,20,.04);
+  border: 1px solid rgba(180,20,20,.1); border-radius: var(--r8);
+  font-size: 13px; color: var(--gray); line-height: 1.7; margin-top: 14px;
+}
+.tom-nao strong { color: #8B1A1A; }
+.dial-grid { display: flex; flex-direction: column; gap: 12px; }
+.dial-item {
+  display: grid; grid-template-columns: 100px 1fr;
+  gap: 16px; padding: 16px 20px;
+  border-radius: var(--r8); background: var(--cream); border: 1px solid var(--line);
+}
+.dial-canal { font-size: 11px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .08em; }
+.dial-msg { font-size: 12px; color: var(--gray); line-height: 1.65; font-style: italic; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 25 — MANIFESTO
+════════════════════════════════════════════════════ */
+#s25 { background: var(--navy); }
+#s25::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse at 80% 20%, rgba(200,169,110,.08) 0%, transparent 60%);
+  pointer-events:none;
+}
+.man-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.man-left {}
+.man-right { display: flex; flex-direction: column; gap: 18px; }
+.man-p { font-size: 14px; color: rgba(255,255,255,.62); line-height: 1.9; }
+.man-final {
+  font-family: var(--serif); font-size: 18px; font-style: italic;
+  color: var(--gold); line-height: 1.6; font-weight: 300;
+}
+
+/* ════════════════════════════════════════════════════
+   SLIDE 27 — MATRIZ
+════════════════════════════════════════════════════ */
+#s27 { background: var(--cream); }
+.mat-layout { display: grid; grid-template-columns: 360px 1fr; gap: 48px; align-items: start; margin-top: 16px; }
+.mat-chart {
+  position: relative; aspect-ratio: 1;
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--r12); overflow: hidden;
+}
+.mat-ax-x, .mat-ax-y { position: absolute; background: var(--line); }
+.mat-ax-x { left:6%; right:6%; top:50%; height:1px; }
+.mat-ax-y { top:6%; bottom:6%; left:50%; width:1px; }
+.mat-lbl {
+  position: absolute; font-size: 9px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--gray2);
+}
+.mat-lbl.t { top:8px; left:50%; transform:translateX(-50%); }
+.mat-lbl.b { bottom:8px; left:50%; transform:translateX(-50%); }
+.mat-lbl.l { left:6px; top:50%; transform:translateY(-50%) rotate(-90deg); }
+.mat-lbl.r { right:6px; top:50%; transform:translateY(-50%) rotate(90deg); }
+.mat-dot {
+  position: absolute; transform: translate(-50%,-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+}
+.dot-c { border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; }
+.dot-n { font-size: 9px; font-weight: 600; white-space: nowrap; }
+.mat-legend { display: flex; flex-direction: column; gap: 14px; }
+.leg-item { display: flex; gap: 12px; align-items: flex-start; }
+.leg-dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 2px; flex-shrink: 0; }
+.leg-info { font-size: 12px; color: var(--gray); line-height: 1.6; }
+.leg-info strong { color: var(--ink); font-weight: 600; }
+.oport-box {
+  padding: 20px 24px; background: var(--navy); border-radius: var(--r12); margin-top: 8px;
+}
+.oport-lbl { font-size: 9px; font-weight: 600; letter-spacing: .18em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+.oport-txt { font-size: 13px; color: rgba(255,255,255,.72); line-height: 1.7; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 28 — CROMÁTICA
+════════════════════════════════════════════════════ */
+#s28 { background: var(--white); }
+.crom-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1.4fr; gap: 18px; margin-top: 16px; }
+.crom-card {
+  padding: 24px 20px; border-radius: var(--r12);
+  border: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px;
+}
+.crom-card.oport { background: var(--navy); border-color: transparent; }
+.crom-swatch { width: 100%; height: 56px; border-radius: var(--r8); }
+.crom-rank { font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+.crom-card:not(.oport) .crom-rank { color: var(--gray2); }
+.crom-card.oport .crom-rank { color: var(--gold); }
+.crom-cor { font-size: 15px; font-weight: 700; }
+.crom-card:not(.oport) .crom-cor { color: var(--ink); }
+.crom-card.oport .crom-cor { color: var(--white); }
+.crom-brands { font-size: 12px; }
+.crom-card:not(.oport) .crom-brands { color: var(--gray); }
+.crom-card.oport .crom-brands { color: rgba(255,255,255,.58); }
+.crom-insight { font-size: 12px; font-style: italic; color: var(--gold); line-height: 1.6; margin-top: auto; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 31 — ESTRUTURA COMUNIDADE
+════════════════════════════════════════════════════ */
+#s31 { background: var(--cream); }
+.com-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 16px; }
+.com-card { border-radius: var(--r12); overflow: hidden; display: flex; flex-direction: column; }
+.com-head { padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; }
+.com-1 .com-head { background: var(--navy); }
+.com-2 .com-head { background: rgba(200,169,110,.12); border: 1px solid rgba(200,169,110,.25); border-bottom: none; }
+.com-3 .com-head { background: rgba(13,43,69,.05); border: 1px solid rgba(13,43,69,.1); border-bottom: none; }
+.com-hname { font-size: 13px; font-weight: 700; }
+.com-1 .com-hname { color: var(--white); }
+.com-2 .com-hname { color: #7A5B0A; }
+.com-3 .com-hname { color: var(--navy); }
+.com-badge { font-size: 9px; font-weight: 600; letter-spacing: .1em; padding: 3px 8px; border-radius: 12px; }
+.com-1 .com-badge { background: rgba(200,169,110,.18); color: var(--gold); }
+.com-2 .com-badge { background: rgba(200,169,110,.18); color: #7A5B0A; }
+.com-3 .com-badge { background: rgba(13,43,69,.1); color: var(--navy); }
+.com-body {
+  padding: 18px 22px; flex: 1;
+  border: 1px solid var(--line); border-top: none;
+  border-radius: 0 0 var(--r12) var(--r12);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.com-item { font-size: 12px; color: var(--gray); line-height: 1.55; display: flex; gap: 8px; }
+.com-item::before { content:'·'; color: var(--gold); font-size: 16px; line-height: 1.3; flex-shrink:0; }
+.com-footer {
+  margin-top: 10px; padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 11px; font-style: italic; color: var(--gray2); line-height: 1.5;
+}
+
+/* ════════════════════════════════════════════════════
+   SLIDE 32 — SÍMBOLOS
+════════════════════════════════════════════════════ */
+#s32 { background: var(--white); }
+.sim-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 16px; }
+.sim-card {
+  padding: 26px 22px; border-radius: var(--r12); border: 1px solid var(--line);
+  background: var(--cream); display: flex; flex-direction: column; gap: 14px;
+  transition: border-color .2s, transform .2s;
+}
+.sim-card:hover { border-color: var(--navy); transform: translateY(-4px); }
+.sim-icon { font-size: 32px; }
+.sim-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+.sim-uso-lbl, .sim-sig-lbl { font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 2px; }
+.sim-uso-lbl { color: var(--gold); }
+.sim-sig-lbl { color: var(--gray2); }
+.sim-uso, .sim-sig { font-size: 12px; color: var(--gray); line-height: 1.6; }
+.sim-sig { font-style: italic; color: var(--navy); }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 33 — RITUAIS
+════════════════════════════════════════════════════ */
+#s33 { background: var(--cream); }
+.rit-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+.rit-item {
+  display: grid; grid-template-columns: 180px 1fr 1fr 1fr;
+  gap: 24px; padding: 24px 28px; border-radius: var(--r12);
+  background: var(--white); border: 1px solid var(--line);
+  align-items: start;
+}
+.rit-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+.rit-col { display: flex; flex-direction: column; gap: 4px; }
+.rit-lbl { font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.rit-txt { font-size: 12px; color: var(--gray); line-height: 1.7; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 34 — PALAVRAS SAGRADAS
+════════════════════════════════════════════════════ */
+#s34 { background: var(--white); }
+.pal-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 16px; }
+.pal-card { padding: 28px 24px; border-radius: var(--r12); display: flex; flex-direction: column; gap: 18px; }
+.pal-1 { background: var(--navy); }
+.pal-2 { background: rgba(200,169,110,.09); border: 1px solid rgba(200,169,110,.25); }
+.pal-3 { background: rgba(13,43,69,.04); border: 1px solid rgba(13,43,69,.1); }
+.pal-4 { background: rgba(200,169,110,.05); border: 1px solid rgba(200,169,110,.15); }
+.pal-word { font-family: var(--serif); font-size: 38px; font-weight: 700; line-height: 1; }
+.pal-1 .pal-word { color: var(--gold); }
+.pal-2 .pal-word, .pal-3 .pal-word { color: var(--navy); }
+.pal-4 .pal-word { color: #7A5B0A; }
+.pal-lbl { font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 3px; }
+.pal-1 .pal-lbl { color: rgba(255,255,255,.4); }
+.pal-2 .pal-lbl, .pal-3 .pal-lbl { color: var(--gray2); }
+.pal-4 .pal-lbl { color: #7A5B0A; }
+.pal-txt { font-size: 12px; line-height: 1.72; }
+.pal-1 .pal-txt { color: rgba(255,255,255,.65); }
+.pal-2 .pal-txt, .pal-3 .pal-txt { color: var(--gray); }
+.pal-4 .pal-txt { color: var(--gray); }
+
+/* ════════════════════════════════════════════════════
+   SLIDE 35 — INIMIGO
+════════════════════════════════════════════════════ */
+#s35 { background: var(--cream); }
+.inim-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 16px; }
+.inim-intro { padding: 28px 32px; background: var(--navy); border-radius: var(--r12); }
+.inim-title { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 14px; }
+.inim-desc { font-size: 13px; color: rgba(255,255,255,.62); line-height: 1.8; }
+.inim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.inim-item {
+  padding: 18px 20px; border-radius: var(--r8);
+  background: rgba(160,20,20,.04); border: 1px solid rgba(160,20,20,.1);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.inim-n  { font-size: 10px; font-weight: 700; color: rgba(160,20,20,.5); letter-spacing: .1em; }
+.inim-t  { font-size: 13px; font-weight: 700; color: var(--ink); }
+.inim-p  { font-size: 12px; color: var(--gray); line-height: 1.65; }
+.inim-mot { font-size: 11px; font-style: italic; color: var(--navy); margin-top: 4px; }
+
+/* ════════════════════════════════════════════════════
+   SLIDE NAMING
+════════════════════════════════════════════════════ */
+#snaming { background: var(--navy); }
+#snaming::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse at 70% 30%, rgba(200,169,110,.1) 0%, transparent 60%);
+  pointer-events:none;
+}
+.nam-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.nam-left {}
+.nam-brand { font-family: var(--serif); font-size: clamp(80px,8vw,110px); font-weight: 700; color: var(--white); line-height: .85; letter-spacing: -.03em; margin-bottom: 10px; }
+.nam-etim  { font-family: var(--serif); font-size: 16px; font-style: italic; font-weight: 300; color: var(--gold); letter-spacing: .06em; margin-bottom: 28px; }
+.nam-tag   { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.75; padding: 18px 22px; border: 1px solid rgba(200,169,110,.2); border-radius: var(--r8); }
+.nam-right { display: flex; flex-direction: column; gap: 20px; }
+.nam-etim-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.nam-ec {
+  padding: 18px 16px; border-radius: var(--r8);
+  border: 1px solid rgba(200,169,110,.2); display: flex; flex-direction: column; gap: 8px;
+}
+.nam-ec-part { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--gold); }
+.nam-ec-desc { font-size: 11px; color: rgba(255,255,255,.58); line-height: 1.7; }
+.nam-proc { display: flex; flex-direction: column; gap: 8px; }
+.nam-row {
+  display: grid; grid-template-columns: 100px 1fr;
+  gap: 16px; padding: 13px 17px;
+  background: rgba(255,255,255,.04); border-radius: var(--r8);
+  font-size: 12px;
+}
+.nam-lbl { color: var(--gold); font-weight: 600; }
+.nam-val { color: rgba(255,255,255,.62); line-height: 1.6; }
+
+/* ════════════════════════════════════════════════════
+   ENCERRAMENTO
+════════════════════════════════════════════════════ */
+#senc {
+  background: var(--navy); align-items: center;
+  text-align: center; gap: 20px;
+}
+#senc::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(circle at 50% 40%, rgba(200,169,110,.1) 0%, transparent 60%);
+  pointer-events:none;
+}
+.enc-title  { font-family: var(--serif); font-size: clamp(90px,11vw,160px); font-weight: 700; color: var(--white); letter-spacing: -.04em; line-height: .85; z-index:1; }
+.enc-tag    { font-family: var(--serif); font-size: 20px; font-style: italic; font-weight: 300; color: var(--gold); z-index:1; }
+.enc-div    { width: 48px; height: 1px; background: rgba(200,169,110,.4); z-index:1; }
+.enc-studio { font-size: 12px; color: rgba(255,255,255,.3); letter-spacing: .22em; z-index:1; }
+
+/* ─── SCROLL REVEAL ───────────────────── */
+@keyframes slideUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
+.reveal { animation: slideUp .55s ease both; }
+
+/* ─── SCROLLBAR ───────────────────────── */
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--navy); border-radius:3px; }
+
+/* ════════════════════════════════════════
+   TABLET — 769px a 1024px
+════════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  section { padding: 84px 40px 60px; }
+  .slide-tag { left: 40px; }
+  .slide-num { right: 40px; }
+  nav { padding: 0 28px; }
+  .nav-items a { font-size: 9px; padding: 4px 8px; }
+
+  .s01-grid { grid-template-columns: 1fr 1fr; }
+  .s01-col:last-child { grid-column: 1 / -1; border-right: none; border-top: 1px solid var(--line); padding: 20px 0 0 !important; }
+
+  .valores-row { grid-template-columns: 1fr 1fr; }
+
+  .gc-layout { grid-template-columns: 1fr; gap: 28px; }
+  .gc-cards  { grid-template-columns: repeat(3, 1fr); }
+
+  #s09 { grid-template-columns: 1fr 1fr !important; display: grid !important; }
+  .pers-col { border-right: none; border-bottom: 1px solid var(--line); }
+  .pers-col:nth-child(odd) { border-right: 1px solid var(--line); }
+  .pers-col:last-child { border-bottom: none; }
+
+  .dif-grid { grid-template-columns: 1fr 1fr; }
+  .dif-card:last-child { grid-column: 1 / -1; }
+
+  .pers-layout { grid-template-columns: 1fr 1fr; }
+  .tom-layout  { grid-template-columns: 1fr; }
+  .mat-layout  { grid-template-columns: 1fr 1fr; }
+  .crom-grid   { grid-template-columns: 1fr 1fr; }
+  .com-grid    { grid-template-columns: 1fr 1fr; }
+  .com-card:last-child { grid-column: 1 / -1; }
+  .pal-grid    { grid-template-columns: 1fr 1fr; }
+  .nam-layout  { grid-template-columns: 1fr 1fr; }
+  .nam-etim-cards { grid-template-columns: repeat(3,1fr); }
+  .band-card   { grid-template-columns: 1fr; }
+  .aplic-grid  { grid-template-columns: 1fr; }
+  .rit-item    { grid-template-columns: 1fr 1fr; }
+  .inim-grid   { grid-template-columns: 1fr 1fr; }
+}
+
+/* ════════════════════════════════════════
+   MOBILE — max-width: 768px
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── NAV ── */
+  nav { padding: 0 20px; height: 48px; }
+  .nav-items { display: none; }
+  /* menu hamburger simples */
+  .nav-logo { font-size: 15px; }
+
+  /* ── SEÇÕES BASE ── */
+  section {
+    min-height: auto;
+    padding: 72px 20px 52px;
+  }
+  .slide-tag {
+    left: 20px; top: 56px; font-size: 9px;
+    letter-spacing: .12em;
+  }
+  .slide-num { right: 20px; bottom: 18px; font-size: 10px; }
+
+  /* ── TIPOGRAFIA ── */
+  .d-hero { font-size: clamp(48px, 13vw, 64px); }
+  .d-xl   { font-size: clamp(32px, 9vw, 44px); }
+  .d-lg   { font-size: clamp(26px, 7vw, 34px); }
+  .d-md   { font-size: clamp(20px, 5.5vw, 26px); }
+  .d-sm   { font-size: clamp(16px, 4.5vw, 20px); }
+  .body-lg { font-size: 14px; }
+  .body-md { font-size: 13px; }
+  .body-sm { font-size: 12px; }
+
+  /* ── GRIDS ── */
+  .grid2, .grid3, .grid4 { grid-template-columns: 1fr; }
+
+  /* ── CAPA ── */
+  #s00 { padding: 68px 20px 48px; gap: 28px; }
+  #s00::before, #s00::after { display: none; }
+  .capa-top       { flex-direction: column; gap: 24px; }
+  .capa-meta      { text-align: left; }
+  .capa-middle    { grid-template-columns: 1fr; gap: 20px; padding: 24px 0; }
+  .capa-tagline   { font-size: 20px; line-height: 1.5; }
+  .capa-desc      { font-size: 13px; }
+  .capa-bottom    { flex-direction: column; gap: 14px; align-items: flex-start; }
+  .capa-index     { flex-wrap: wrap; gap: 8px; }
+  .capa-brand .title    { font-size: clamp(52px, 14vw, 68px); }
+  .capa-brand .subtitle { font-size: 13px; letter-spacing: .2em; }
+
+  /* ── SEÇÃO HEADER ── */
+  .sec-header {
+    min-height: auto !important;
+    padding: 56px 20px 40px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .sec-letter     { font-size: 68px; }
+  .sec-info .sec-title { font-size: 30px; }
+  .sec-info .sec-desc  { font-size: 13px; }
+
+  /* ── SLIDE 01 — ABERTURA ── */
+  .s01-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 28px;
+  }
+  .s01-col {
+    padding: 0 0 24px 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 24px;
+  }
+  .s01-col:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0 !important;
+  }
+  .s01-headline { font-size: 24px; line-height: 1.3; }
+  .s01-quote    { font-size: 16px; }
+
+  /* ── SLIDE 02 — ORIGEM ── */
+  .origem-item {
+    grid-template-columns: 40px 1fr;
+    gap: 14px; padding: 18px 16px;
+  }
+  .origem-num { width: 40px; height: 40px; font-size: 17px; }
+  .origem-title { font-size: 13px; }
+  .origem-text  { font-size: 12px; }
+
+  /* ── SLIDE 03 — MVV ── */
+  .mvv-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .mvv-missao, .mvv-visao, .mvv-valores { grid-column: 1; }
+  .valores-row { grid-template-columns: 1fr; gap: 16px; }
+  .mvv-missao, .mvv-visao, .mvv-valores { padding: 24px 20px; }
+
+  /* ── SLIDE 04 — CÍRCULO DOURADO ── */
+  .gc-layout  { grid-template-columns: 1fr; gap: 28px; }
+  .gc-diagram { width: 180px; height: 180px; margin: 0 auto; }
+  .gc-ring-1  { font-size: 9px; }
+  .gc-cards   { grid-template-columns: 1fr; gap: 12px; }
+  .gc-card    { padding: 20px 18px; }
+  .gc-pt      { font-size: 24px; }
+
+  /* ── SLIDE 05 — PORTFÓLIO ── */
+  .port-table { font-size: 12px; }
+  .port-table th, .port-table td { padding: 11px 12px; }
+  .port-table th:nth-child(3),
+  .port-table td:nth-child(3) { display: none; }
+  .port-table th:nth-child(4),
+  .port-table td:nth-child(4) { display: none; }
+  .port-num { width: 30px; height: 30px; font-size: 13px; }
+
+  /* ── SLIDES 07–08 — ENTREGAS ── */
+  .ent-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ent-card { padding: 20px 18px; }
+
+  /* ── SLIDE 09 — PERSONALIDADE ── */
+  #s09 {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 72px 0 48px !important;
+  }
+  .pers-col {
+    padding: 24px 20px !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--line);
+  }
+  .pers-col:last-child { border-bottom: none; }
+
+  /* ── SLIDE 10 — TERRITÓRIO ── */
+  #s10 { padding: 72px 20px 48px; }
+  .terr-main { font-size: clamp(22px, 6vw, 30px); margin-bottom: 24px; }
+  .terr-sub  { font-size: 13px; padding-top: 24px; }
+
+  /* ── SLIDE 12 — BANDEIRAS ── */
+  .band-grid { grid-template-columns: 1fr; gap: 14px; }
+  .band-card { grid-template-columns: 1fr; padding: 22px 20px; gap: 16px; }
+  .band-num  { font-size: 36px; }
+
+  /* ── SLIDE 14 — DIFERENCIAIS ── */
+  .dif-grid { grid-template-columns: 1fr; gap: 14px; }
+  .dif-card { min-height: auto; padding: 24px 20px; }
+  .dif-n    { font-size: 42px; }
+
+  /* ── SLIDE 16 — DECLARAÇÃO VISUAL ── */
+  #s16 { padding: 72px 20px 48px; gap: 18px; }
+  .decl-name   { font-size: clamp(56px, 15vw, 80px); }
+  .decl-tag    { font-size: 16px; }
+  .decl-formal { padding: 18px 18px; font-size: 13px; }
+
+  /* ── SLIDE 18 — COMO APLICAR ── */
+  .aplic-grid  { grid-template-columns: 1fr; gap: 12px; }
+  .aplic-card  { padding: 24px 20px; }
+
+  /* ── SLIDE 21 — PERSONA ── */
+  .pers-layout  { grid-template-columns: 1fr; gap: 20px; }
+  .persona-card { padding: 24px 20px; }
+  .persona-data { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .persona-name { font-size: 24px; }
+
+  /* ── SLIDE 22 — TOM DE VOZ ── */
+  .tom-layout { grid-template-columns: 1fr; gap: 20px; }
+  .tom-item   { grid-template-columns: 1fr; gap: 4px; padding: 14px 16px; }
+  .tom-name   { font-size: 13px; }
+  .dial-item  { grid-template-columns: 1fr; gap: 4px; }
+
+  /* ── SLIDE 25 — MANIFESTO ── */
+  #s25 { padding: 72px 20px 48px; }
+  .man-layout { grid-template-columns: 1fr; gap: 28px; }
+  .man-p      { font-size: 13px; }
+  .man-final  { font-size: 16px; }
+
+  /* ── SLIDE 27 — MATRIZ ── */
+  .mat-layout { grid-template-columns: 1fr; gap: 24px; }
+  .mat-chart  { max-width: 100%; aspect-ratio: 1; }
+  .mat-lbl    { font-size: 8px; }
+
+  /* ── SLIDE 28 — CROMÁTICA ── */
+  .crom-grid  { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .crom-card  { padding: 18px 14px; }
+  .crom-swatch { height: 44px; }
+
+  /* ── SLIDE 31 — COMUNIDADE ── */
+  .com-grid { grid-template-columns: 1fr; gap: 14px; }
+
+  /* ── SLIDE 33 — RITUAIS ── */
+  .rit-grid { gap: 12px; }
+  .rit-item {
+    grid-template-columns: 1fr;
+    gap: 14px; padding: 18px 16px;
+  }
+
+  /* ── SLIDE 34 — PALAVRAS SAGRADAS ── */
+  .pal-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pal-card { padding: 20px 16px; gap: 14px; }
+  .pal-word { font-size: 26px; }
+
+  /* ── SLIDE 35 — INIMIGO ── */
+  .inim-layout { grid-template-columns: 1fr; gap: 18px; }
+  .inim-grid   { grid-template-columns: 1fr; gap: 10px; }
+  .inim-intro  { padding: 22px 18px; }
+
+  /* ── NAMING ── */
+  #snaming { padding: 72px 20px 48px; }
+  .nam-layout     { grid-template-columns: 1fr; gap: 32px; }
+  .nam-brand      { font-size: clamp(56px, 14vw, 80px); }
+  .nam-etim-cards { grid-template-columns: 1fr; gap: 10px; }
+  .nam-row        { grid-template-columns: 86px 1fr; gap: 12px; font-size: 11px; }
+  .nam-ec         { padding: 14px 14px; }
+
+  /* ── ENCERRAMENTO ── */
+  #senc { padding: 72px 20px 52px; }
+  .enc-title  { font-size: clamp(56px, 15vw, 80px); }
+  .enc-tag    { font-size: 15px; }
+
+}
+
+/* ════════════════════════════════════════
+   MOBILE PEQUENO — max-width: 380px
+════════════════════════════════════════ */
+@media (max-width: 380px) {
+  section { padding: 68px 16px 48px; }
+  .slide-tag { left: 16px; }
+  .slide-num { right: 16px; }
+  .pal-grid  { grid-template-columns: 1fr; }
+  .crom-grid { grid-template-columns: 1fr; }
+  .persona-data { grid-template-columns: 1fr; }
+  .port-table th:nth-child(5),
+  .port-table td:nth-child(5) { display: none; }
+  .mvv-missao, .mvv-visao, .mvv-valores { padding: 20px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ════════════════════════════════════════════ -->
+<nav>
+  <span class="nav-logo">VERLARIS</span>
+  <div class="nav-items">
+    <a href="#s00">Capa</a>
+    <a href="#sA">Abertura</a>
+    <a href="#sB">Origem</a>
+    <a href="#sC">Fundação</a>
+    <a href="#sD">Círculo</a>
+    <a href="#sE">Portfólio</a>
+    <a href="#sF">Entregas</a>
+    <a href="#sG">Personalidade</a>
+    <a href="#sH">Território</a>
+    <a href="#sI">Diferenciais</a>
+    <a href="#sJ">Posicionamento</a>
+    <a href="#sK">Mensagem</a>
+    <a href="#sL">Comunicação</a>
+    <a href="#sM">Competitiva</a>
+    <a href="#sN">Comunidade</a>
+    <a href="#snaming">Naming</a>
+  </div>
+</nav>
+
+<!-- ══ CAPA ══════════════════════════════════════════ -->
+<section id="s00">
+  <div class="capa-top">
+    <div class="capa-brand">
+      <div class="eyebrow">Relatório Estratégico de Marca · 2026</div>
+      <div class="display d-hero title">VERLARIS</div>
+      <div class="subtitle">CONSTRUTORA</div>
+    </div>
+    <div class="capa-meta">
+      <div class="m-label">Clientes</div>
+      <div class="m-val">Mozartt & Marianna Balbino</div>
+      <div class="m-label">Segmento</div>
+      <div class="m-val">Construção Civil MCMV · Faixa 2</div>
+      <div class="m-label">Localização</div>
+      <div class="m-val">Maceió, Alagoas</div>
+      <div class="m-label">Elaborado por</div>
+      <div class="m-val">RODRI Brand Studio</div>
+    </div>
+  </div>
+  <div class="capa-middle">
+    <div class="capa-tagline">"Ver o lar é o primeiro ato de construir."</div>
+    <div class="capa-desc">Um relatório estratégico completo de posicionamento, identidade e comunidade — construído sobre a história real de três gerações de construtores da família Rocha, com origem em Portugal e destino em Maceió.</div>
+  </div>
+  <div class="capa-bottom">
+    <div class="studio">
+      <span class="s-label">Studio responsável</span>
+      <span class="s-name">RODRI Brand Studio · Fortaleza, Ceará</span>
+    </div>
+    <div class="capa-index">
+      <span class="ci">A–N · 14 Seções</span>
+      <span class="ci">50+ Slides</span>
+      <span class="ci">MCMV Faixa 2</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SEÇÃO A ════════════════════════════════════════ -->
+<section id="sA" class="sec-header bg-navy">
+  <div class="sec-letter">A</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção A</span>
+    <div class="display d-xl c-white sec-title">Abertura</div>
+    <p class="sec-desc">A Verlaris nasce antes do tijolo — no olhar de quem enxerga o lar onde outros veem terreno.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">01</span>
+</section>
+
+<!-- SLIDE 01 -->
+<section id="s01">
+  <span class="slide-tag">Slide 01 · Headline + Contexto</span>
+  <div class="s01-grid" style="margin-top:48px">
+    <div class="s01-col">
+      <div class="caption c-gold" style="margin-bottom:12px">Headline</div>
+      <div class="s01-headline">Uma construtora que nasce antes do tijolo.</div>
+      <p class="body-md c-gray">A Verlaris nasceu da convergência de <strong>três gerações de construtores</strong>. Mozartt Balbino percebeu de perto a ausência de marcas que falassem a língua emocional do cliente Faixa 2 — aquele que conquista o primeiro imóvel da vida e não quer ser tratado como número.</p>
+      <div class="s01-quote">"Ver o lar é o primeiro ato de construir."</div>
+    </div>
+    <div class="s01-col" style="padding-left:40px">
+      <div class="caption c-gold" style="margin-bottom:12px">Origem</div>
+      <p class="body-md c-gray">Marianna Balbino trouxe a sensibilidade humana e a conexão com a história familiar: o <strong>avô servente da Marinha</strong> que erguia estruturas militares com as mãos, o pai que vendia material de construção, e o <strong>Major Isidoro</strong> — parente histórico que libertou escravizados e fundou um município em Alagoas.</p>
+      <p class="body-md c-gray">Uma família que sempre construiu para o povo.</p>
+    </div>
+    <div class="s01-col" style="padding-left:40px">
+      <div class="caption c-gold" style="margin-bottom:12px">Movimento</div>
+      <p class="body-md c-gray">Juntos, decidiram <strong>profissionalizar o que a família sempre fez</strong>. Não apenas uma construtora — uma construtora com alma, com história, com propósito.</p>
+      <p class="body-md c-gray">A Verlaris representa um movimento: transformar o mercado MCMV de Maceió, mostrando que é possível ter branding forte, estética aspiracional e profundo cuidado humano em um único produto acessível.</p>
+      <p class="body-md c-gray">Uma marca feita para quem sempre acreditou que casa própria era um sonho distante demais. A Verlaris existe para provar que não era.</p>
+    </div>
+  </div>
+  <span class="slide-num">01</span>
+</section>
+
+<!-- ══ SEÇÃO B ════════════════════════════════════════ -->
+<section id="sB" class="sec-header bg-navy">
+  <div class="sec-letter">B</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção B</span>
+    <div class="display d-xl c-white sec-title">Origem</div>
+    <p class="sec-desc">Por que esse negócio existe — razões de mercado, de inconformismo e a experiência que a Verlaris propõe.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">02</span>
+</section>
+
+<!-- SLIDE 02 -->
+<section id="s02">
+  <span class="slide-tag">Slide 02 · Por que chegamos até aqui?</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:8px">Por que chegamos até aqui?</div>
+  <div class="origem-grid">
+    <div class="origem-item">
+      <div class="origem-num">01</div>
+      <div class="origem-body">
+        <div class="origem-title">Oportunidade de mercado</div>
+        <div class="origem-text">O mercado MCMV em Maceió movimenta bilhões anualmente, mas nenhuma construtora ocupou o espaço de marca com posicionamento intencional. As opções existentes comunicam preço, burocracia e desconto — quando o cliente quer sentir que subiu de nível. A Verlaris surge para ocupar esse espaço com branding premium de percepção, estética aspiracional e comunicação humana.</div>
+      </div>
+    </div>
+    <div class="origem-item">
+      <div class="origem-num">02</div>
+      <div class="origem-body">
+        <div class="origem-title">Inconformismo com o status quo</div>
+        <div class="origem-text">As marcas disponíveis no segmento MCMV de Maceió entregam comunicação de panfleto, estética genérica e excesso de institucional frio. A Verlaris nasce inconformada com esse cenário, trazendo proximidade humana, identidade visual distinta e uma narrativa que faz o cliente sentir que a construtora está do lado dele — não apenas vendendo.</div>
+      </div>
+    </div>
+    <div class="origem-item">
+      <div class="origem-num">03</div>
+      <div class="origem-body">
+        <div class="origem-title">Experiência proposta</div>
+        <div class="origem-text">Mais do que construir apartamentos, a Verlaris quer transformar a aquisição do primeiro imóvel em uma experiência de <strong>alívio, orgulho e pertencimento</strong>. Conectando a história de três gerações de construtores com o sonho de uma família maceioense que sempre mereceu mais do que o mercado oferecia.</div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">02</span>
+</section>
+
+<!-- ══ SEÇÃO C ════════════════════════════════════════ -->
+<section id="sC" class="sec-header bg-navy">
+  <div class="sec-letter">C</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção C</span>
+    <div class="display d-xl c-white sec-title">Fundação Estratégica</div>
+    <p class="sec-desc">Missão, Visão e os quatro Valores que nascem da história da família Rocha.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">03</span>
+</section>
+
+<!-- SLIDE 03 -->
+<section id="s03">
+  <span class="slide-tag">Slide 03 · Missão, Visão e Valores</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:8px">Missão, Visão e Valores</div>
+  <div class="mvv-layout">
+    <div class="mvv-missao">
+      <div class="mvv-label">Missão</div>
+      <div class="mvv-text">Construir lares acessíveis com excelência, cuidado e identidade, para famílias de Maceió e Alagoas que conquistam o primeiro imóvel da vida — tratando cada entrega como o ato mais significativo na trajetória de uma família.</div>
+    </div>
+    <div class="mvv-visao">
+      <div class="mvv-label">Visão</div>
+      <div class="mvv-text">Ser reconhecida como a construtora que redefiniu o MCMV em Alagoas, unindo construção de qualidade, identidade de marca forte e experiência humana — tornando-se referência nacional em branding para o segmento habitacional popular.</div>
+    </div>
+    <div class="mvv-valores">
+      <div class="mvv-label">Valores</div>
+      <div class="valores-row">
+        <div class="valor">
+          <div class="valor-name">Ver antes de erguer</div>
+          <div class="valor-desc">Toda construção começa no olhar. Antes do projeto, entendemos o cliente, o território e o destino de cada família.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-name">Servir com vocação</div>
+          <div class="valor-desc">Três gerações da família Rocha construíram e serviram. A Verlaris herda essa vocação — construir não é emprego, é chamado.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-name">Emancipar pelo lar</div>
+          <div class="valor-desc">Assim como o Major Isidoro libertou pessoas, a Verlaris liberta famílias do aluguel — devolvendo dignidade e pertencimento.</div>
+        </div>
+        <div class="valor">
+          <div class="valor-name">Honrar a linhagem</div>
+          <div class="valor-desc">O brasão da família Rocha vem de Portugal. Honramos essa origem entregando qualidade que atravessa gerações.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">03</span>
+</section>
+
+<!-- ══ SEÇÃO D ════════════════════════════════════════ -->
+<section id="sD" class="sec-header bg-navy">
+  <div class="sec-letter">D</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção D</span>
+    <div class="display d-xl c-white sec-title">Círculo Dourado</div>
+    <p class="sec-desc">O Quê, Como e Por Quê — as três camadas de propósito da Verlaris.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">04</span>
+</section>
+
+<!-- SLIDE 04 -->
+<section id="s04">
+  <span class="slide-tag">Slide 04 · Golden Circle</span>
+  <div class="gc-layout" style="margin-top:40px">
+    <div>
+      <div class="display d-sm c-navy" style="margin-bottom:16px">De dentro<br>para fora.</div>
+      <p class="body-md c-gray" style="margin-bottom:28px">A Verlaris existe para cumprir destinos. Não construímos apartamentos — construímos o primeiro lar de quem sempre mereceu ter um.</p>
+      <div class="gc-diagram">
+        <div class="gc-ring gc-ring-1"><span style="position:absolute;top:10px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:600;letter-spacing:.1em">O QUÊ</span></div>
+        <div class="gc-ring gc-ring-2"><span style="position:absolute;top:8px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:600;letter-spacing:.1em">COMO</span></div>
+        <div class="gc-ring gc-ring-3">
+          <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-align:center">POR<br>QUÊ</span>
+        </div>
+      </div>
+    </div>
+    <div class="gc-cards">
+      <div class="gc-card gc-what">
+        <span class="gc-en">What</span>
+        <span class="gc-pt">O Quê</span>
+        <p class="gc-txt">Imóveis residenciais MCMV Faixa 2 em Maceió, com entrega técnica de qualidade, identidade visual premium e experiência de compra humanizada.</p>
+      </div>
+      <div class="gc-card gc-how">
+        <span class="gc-en">How</span>
+        <span class="gc-pt">Como</span>
+        <p class="gc-txt">Com o método construtivo herdado de três gerações, branding intencional e comunicação que trata o cliente Faixa 2 como o protagonista que ele é.</p>
+      </div>
+      <div class="gc-card gc-why">
+        <span class="gc-en">Why</span>
+        <span class="gc-pt">Por Quê</span>
+        <p class="gc-txt">Porque ver o lar onde outros veem terreno é o dom que a família Rocha sempre teve. E porque cada família que conquista um imóvel próprio escreve o capítulo mais importante de sua história.</p>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">04</span>
+</section>
+
+<!-- ══ SEÇÃO E ════════════════════════════════════════ -->
+<section id="sE" class="sec-header bg-navy">
+  <div class="sec-letter">E</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção E</span>
+    <div class="display d-xl c-white sec-title">Portfólio</div>
+    <p class="sec-desc">Produtos e serviços da marca — fase atual e próximos horizontes.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">05</span>
+</section>
+
+<!-- SLIDE 05 -->
+<section id="s05">
+  <span class="slide-tag">Slide 05 · Portfólio de Produtos</span>
+  <div style="display:flex;align-items:baseline;gap:20px;margin-top:40px">
+    <div class="display d-md c-navy">O que a Verlaris entrega.</div>
+    <span class="tag tag-navy">● Fase Atual — AGORA</span>
+  </div>
+  <table class="port-table">
+    <thead>
+      <tr>
+        <th style="width:56px">#</th>
+        <th>Produto / Serviço</th>
+        <th>Categoria</th>
+        <th>Especificação</th>
+        <th>Fase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="port-num">01</div></td>
+        <td class="port-nome">Residencial Verlaris — Maceió</td>
+        <td class="body-sm c-gray">MCMV · Faixa 2</td>
+        <td class="body-sm c-gray">Apartamentos 2 e 3 dormitórios</td>
+        <td><span class="tag fase-agora">AGORA</span></td>
+      </tr>
+      <tr>
+        <td><div class="port-num">02</div></td>
+        <td class="port-nome">Consultoria de Aquisição MCMV</td>
+        <td class="body-sm c-gray">Serviço</td>
+        <td class="body-sm c-gray">Apoio ao financiamento CEF/SBPE</td>
+        <td><span class="tag fase-agora">AGORA</span></td>
+      </tr>
+      <tr>
+        <td><div class="port-num">03</div></td>
+        <td class="port-nome">Verlaris Condomínio Club</td>
+        <td class="body-sm c-gray">Residencial Premium</td>
+        <td class="body-sm c-gray">Área de lazer + piscina + gourmet</td>
+        <td><span class="tag fase-breve">EM BREVE</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="slide-num">05</span>
+</section>
+
+<!-- ══ SEÇÃO F ════════════════════════════════════════ -->
+<section id="sF" class="sec-header bg-navy">
+  <div class="sec-letter">F</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção F</span>
+    <div class="display d-xl c-white sec-title">Entregas da Marca</div>
+    <p class="sec-desc">O que a Verlaris entrega de concreto — e o que desperta de emocional.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">06</span>
+</section>
+
+<!-- SLIDE 07 — FUNCIONAIS -->
+<section id="s07">
+  <span class="slide-tag">Slide 07 · Entregas Funcionais</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:4px">O que entregamos de concreto.</div>
+  <p class="body-md c-gray" style="margin-bottom:8px">Tangível, verificável, mensurável.</p>
+  <div class="ent-grid">
+    <div class="ent-card ent-func">
+      <div class="ent-icon">🏠</div>
+      <div class="ent-name">Imóvel financiado pelo MCMV</div>
+      <div class="ent-desc">Acesso ao programa Minha Casa Minha Vida com acompanhamento do processo — da aprovação à entrega das chaves.</div>
+    </div>
+    <div class="ent-card ent-func">
+      <div class="ent-icon">🔨</div>
+      <div class="ent-name">Qualidade construtiva certificada</div>
+      <div class="ent-desc">Materiais de qualidade, prazos cumpridos e engenharia supervisionada pela equipe que herdou três gerações de ofício.</div>
+    </div>
+    <div class="ent-card ent-func">
+      <div class="ent-icon">📍</div>
+      <div class="ent-name">Localização estratégica em Maceió</div>
+      <div class="ent-desc">Empreendimentos em regiões com infraestrutura, transporte e acesso a serviços — pensados para a vida real das famílias alagoanas.</div>
+    </div>
+    <div class="ent-card ent-func">
+      <div class="ent-icon">🤝</div>
+      <div class="ent-name">Suporte ao longo de todo o processo</div>
+      <div class="ent-desc">Consultoria humanizada que acompanha o cliente desde a simulação até a assinatura — sem deixá-lo perdido em burocracia.</div>
+    </div>
+  </div>
+  <span class="slide-num">07</span>
+</section>
+
+<!-- SLIDE 08 — EMOCIONAIS -->
+<section id="s08">
+  <span class="slide-tag">Slide 08 · Entregas Emocionais</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:4px">O que despertamos de emocional.</div>
+  <p class="body-md c-gray" style="margin-bottom:8px">O que o cliente sente — e conta para os outros.</p>
+  <div class="ent-grid">
+    <div class="ent-card ent-emoc">
+      <div class="ent-icon">😮‍💨</div>
+      <div class="ent-name">Alívio</div>
+      <div class="ent-desc">O sentimento ao assinar o contrato não é de compra — é de alívio. A Verlaris entrega o fim de anos de aluguel e insegurança.</div>
+    </div>
+    <div class="ent-card ent-emoc">
+      <div class="ent-icon">🏆</div>
+      <div class="ent-name">Orgulho familiar</div>
+      <div class="ent-desc">A casa própria é a vitória da família. A Verlaris entrega o orgulho de mostrar o endereço, de passar a chave para os filhos.</div>
+    </div>
+    <div class="ent-card ent-emoc">
+      <div class="ent-icon">🌊</div>
+      <div class="ent-name">Pertencimento</div>
+      <div class="ent-desc">Não apenas morar — pertencer. A Verlaris cria comunidades onde o cliente sente que encontrou o lugar que sempre foi seu.</div>
+    </div>
+    <div class="ent-card ent-emoc">
+      <div class="ent-icon">🛡️</div>
+      <div class="ent-name">Segurança</div>
+      <div class="ent-desc">Em Maceió, com alta percepção de insegurança urbana, a Verlaris entrega o condomínio como espaço de paz e proteção para a família.</div>
+    </div>
+  </div>
+  <span class="slide-num">08</span>
+</section>
+
+<!-- ══ SEÇÃO G ════════════════════════════════════════ -->
+<section id="sG" class="sec-header bg-navy">
+  <div class="sec-letter">G</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção G</span>
+    <div class="display d-xl c-white sec-title">Personalidade</div>
+    <p class="sec-desc">Traços de caráter, como colocá-los em prática e os atributos que o público deve associar à marca.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">09</span>
+</section>
+
+<!-- SLIDE 09 -->
+<section id="s09">
+  <div class="pers-col pers-col-0">
+    <div class="pc-label">Traços</div>
+    <div class="tr-item"><div class="tr-name">Humana</div><div class="tr-desc">Fala a língua do cliente. Não vende imóvel — resolve a vida. Trata a conquista do primeiro lar com a seriedade que ela merece.</div></div>
+    <div class="tr-item"><div class="tr-name">Aspiracional</div><div class="tr-desc">Eleva a percepção sem afastar. Faz o cliente sentir que subiu de nível — sem deixá-lo sentir que está fora do lugar.</div></div>
+    <div class="tr-item"><div class="tr-name">Sólida</div><div class="tr-desc">Três gerações de ofício. Construção que dura. Marca que não muda de identidade a cada tendência.</div></div>
+    <div class="tr-item"><div class="tr-name">Local</div><div class="tr-desc">É de Maceió, para Maceió. Conhece a lagoa, a orla, o trapiche, o nordestino que quer crescer.</div></div>
+  </div>
+  <div class="pers-col">
+    <div class="pc-label c-gray">Como praticar</div>
+    <div class="tr-item"><div class="tr-name">Visual</div><div class="tr-desc">Estética limpa, tons quentes sofisticados — areia, azul profundo, dourado. Sem gritar desconto.</div></div>
+    <div class="tr-item"><div class="tr-name">Tom de voz</div><div class="tr-desc">Próximo, firme e encorajador. Fala de conquista, não de metragem. Usa linguagem acessível com dignidade.</div></div>
+    <div class="tr-item"><div class="tr-name">Atendimento</div><div class="tr-desc">Consultivo e paciente. O cliente nunca sai de uma conversa sem entender o próximo passo.</div></div>
+    <div class="tr-item"><div class="tr-name">Comunicação</div><div class="tr-desc">Sem urgência artificial. Sem 'últimas unidades'. Com histórias reais de famílias que chegaram.</div></div>
+  </div>
+  <div class="pers-col">
+    <div class="pc-label c-gray">Atributos</div>
+    <div class="tr-item"><div class="tr-name">Confiável</div><div class="tr-desc">A construtora que cumpre o que promete — prazo, qualidade e processo.</div></div>
+    <div class="tr-item"><div class="tr-name">Acolhedora</div><div class="tr-desc">Faz o cliente sentir que está sendo cuidado, não processado.</div></div>
+    <div class="tr-item"><div class="tr-name">Premium possível</div><div class="tr-desc">Parece cara sem ser. Estética elevada com preço acessível.</div></div>
+    <div class="tr-item"><div class="tr-name">Orgulhosa da origem</div><div class="tr-desc">Carrega Maceió, Alagoas e a história da família como ativos — não como limitações.</div></div>
+  </div>
+  <div class="pers-col" style="background:var(--cream)">
+    <div class="pc-label c-gray">Síntese</div>
+    <p class="body-sm c-gray">A Verlaris é uma marca que olha para o cliente antes de olhar para o produto.</p>
+    <p class="body-sm c-gray">Transmite a seriedade de quem construiu por três gerações com a proximidade de quem entende o que uma família sente no momento mais importante da vida.</p>
+    <div class="sintese-card">Uma marca de Maceió que leva o nome da cidade dentro do próprio propósito.</div>
+  </div>
+</section>
+
+<!-- ══ SEÇÃO H ════════════════════════════════════════ -->
+<section id="sH" class="sec-header bg-navy">
+  <div class="sec-letter">H</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção H</span>
+    <div class="display d-xl c-white sec-title">Território &<br>Bandeiras</div>
+    <p class="sec-desc">A frase de território e os quatro pilares inegociáveis que guiam a marca.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">10</span>
+</section>
+
+<!-- SLIDE 10 -->
+<section id="s10">
+  <span class="slide-tag">Slide 10 · Frase de Território</span>
+  <div class="terr-main" style="margin-top:48px">
+    A Verlaris não é uma construtora de apartamentos; seu objetivo é ser o momento em que uma família maceioense <em>para de pagar para morar</em> e começa a morar no que é seu.
+  </div>
+  <div class="terr-sub">
+    <strong>Enquanto os concorrentes falam de preço, desconto e parcelinha,</strong> a Verlaris cria um novo território: humano, aspiracional e profundamente local.
+  </div>
+  <span class="slide-num">10</span>
+</section>
+
+<!-- SLIDE 12 -->
+<section id="s12">
+  <span class="slide-tag">Slide 12 · Bandeiras da Marca</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:4px">Quatro pilares inegociáveis.</div>
+  <div class="band-grid">
+    <div class="band-card">
+      <div class="band-num">01</div>
+      <div class="band-title">Ver antes de vender</div>
+      <div class="band-col"><div class="band-lbl">O que significa</div><div class="band-txt">Nenhum cliente é abordado com proposta antes de ser compreendido. A Verlaris escuta, mapeia e só então apresenta a solução certa.</div></div>
+      <div class="band-col"><div class="band-lbl">Como aplicamos</div><div class="band-txt">Processo consultivo obrigatório antes da simulação. Vendedor treinado para ouvir mais do que falar.</div></div>
+    </div>
+    <div class="band-card">
+      <div class="band-num">02</div>
+      <div class="band-title">Construção que honra a origem</div>
+      <div class="band-col"><div class="band-lbl">O que significa</div><div class="band-txt">O ofício de construir foi herdado do avô servente e do pai comerciante de material. Cada obra carrega esse peso de responsabilidade.</div></div>
+      <div class="band-col"><div class="band-lbl">Como aplicamos</div><div class="band-txt">Supervisão técnica direta dos sócios. Materiais verificados. Cronogramas cumpridos.</div></div>
+    </div>
+    <div class="band-card">
+      <div class="band-num">03</div>
+      <div class="band-title">Emancipação pelo endereço</div>
+      <div class="band-col"><div class="band-lbl">O que significa</div><div class="band-txt">Assim como o Major Isidoro libertou pessoas, a Verlaris liberta famílias do aluguel. Um endereço próprio é um ato de emancipação.</div></div>
+      <div class="band-col"><div class="band-lbl">Como aplicamos</div><div class="band-txt">Comunicação centrada na transformação de vida. Storytelling de famílias reais que chegaram ao primeiro lar.</div></div>
+    </div>
+    <div class="band-card">
+      <div class="band-num">04</div>
+      <div class="band-title">Maceió como orgulho</div>
+      <div class="band-col"><div class="band-lbl">O que significa</div><div class="band-txt">A Verlaris não esconde que é alagoana. Carrega Maceió — a lagoa, a orla, o Jaraguá — como identidade, não como limitação.</div></div>
+      <div class="band-col"><div class="band-lbl">Como aplicamos</div><div class="band-txt">Referências visuais e narrativas da cultura local. Parcerias com o ecossistema de Maceió. Orgulho de ser daqui.</div></div>
+    </div>
+  </div>
+  <span class="slide-num">12</span>
+</section>
+
+<!-- ══ SEÇÃO I ════════════════════════════════════════ -->
+<section id="sI" class="sec-header bg-navy">
+  <div class="sec-letter">I</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção I</span>
+    <div class="display d-xl c-white sec-title">Diferenciais<br>Estratégicos</div>
+    <p class="sec-desc">O que a Verlaris possui que é difícil — ou impossível — de copiar.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">13</span>
+</section>
+
+<!-- SLIDE 14 -->
+<section id="s14">
+  <span class="slide-tag">Slide 14 · Diferenciais Estratégicos</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:8px">O que ninguém consegue replicar.</div>
+  <div class="dif-grid">
+    <div class="dif-card dif-1">
+      <div class="dif-n">01</div>
+      <div class="dif-t">A história que ninguém tem</div>
+      <div><div class="dif-lbl oque">O que é</div><div class="dif-p">Três gerações: avô servente da Marinha, pai com loja de material, filhos que profissionalizaram o ofício. O Major Isidoro como parente histórico que fundou município em Alagoas. Brasão da família Rocha originário de Portugal.</div></div>
+      <div><div class="dif-lbl unico" style="color:var(--gray)">Por que é único</div><div class="dif-p">Nenhuma construtora MCMV do Brasil tem história familiar documentada desta profundidade. A origem é o posicionamento.</div></div>
+    </div>
+    <div class="dif-card dif-2">
+      <div class="dif-n">02</div>
+      <div class="dif-t">Nome com propósito inscrito</div>
+      <div><div class="dif-lbl oque">O que é</div><div class="dif-p">Verlaris nasce da fusão de Ver + Lares em terminação latina. O único nome de construtora MCMV no Brasil que carrega o propósito dentro da própria palavra.</div></div>
+      <div><div class="dif-lbl unico">Por que é único</div><div class="dif-p">Naming validado por 6 semanas com busca INPI confirmada livre nas classes 36 e 37. Registro proprietário — não pode ser replicado.</div></div>
+    </div>
+    <div class="dif-card dif-3">
+      <div class="dif-n">03</div>
+      <div class="dif-t">Branding intencional no MCMV</div>
+      <div><div class="dif-lbl oque">O que é</div><div class="dif-p">Identidade visual premium, comunicação centrada em transformação de vida e experiência humanizada. A única construtora MCMV de Maceió com posicionamento estruturado.</div></div>
+      <div><div class="dif-lbl unico" style="color:var(--gray)">Por que é único</div><div class="dif-p">Telesil, Rocha, Vella comunicam preço e desconto. A Verlaris comunica dignidade e conquista. Espaço completamente inexplorado em Maceió.</div></div>
+    </div>
+  </div>
+  <span class="slide-num">14</span>
+</section>
+
+<!-- ══ SEÇÃO J ════════════════════════════════════════ -->
+<section id="sJ" class="sec-header bg-navy">
+  <div class="sec-letter">J</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção J</span>
+    <div class="display d-xl c-white sec-title">Declaração de<br>Posicionamento</div>
+    <p class="sec-desc">Tagline, declaração formal, análise dos elementos e como aplicar em todos os canais.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">15</span>
+</section>
+
+<!-- SLIDE 16 -->
+<section id="s16">
+  <div class="decl-brand">Verlaris · Construtora · Maceió, AL</div>
+  <div class="decl-name">VERLARIS</div>
+  <div class="decl-tag">Ver o lar é o primeiro ato de construir.</div>
+  <div class="decl-formal">
+    A Verlaris transforma a conquista do primeiro imóvel em uma experiência de alívio, orgulho e pertencimento, unindo a história de três gerações de construtores com o sonho de famílias maceioenses que sempre mereceram mais do que o mercado habitacional popular tinha a oferecer — mas que nunca encontraram uma marca que as tratasse à altura do que representam.
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.25)">16</span>
+</section>
+
+
+<!-- SLIDE 18 -->
+<section id="s18">
+  <span class="slide-tag">Slide 18 · Como Aplicar</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:8px">A declaração em três frentes.</div>
+  <div class="aplic-grid">
+    <div class="aplic-card aplic-1">
+      <div class="aplic-lbl">Individual</div>
+      <div class="aplic-txt">Cada ponto de contato lembra o cliente da escolha que está fazendo — não de um produto, mas de um destino. A comunicação é sempre sobre transformação de vida, nunca sobre metragem ou preço por m².</div>
+      <div class="ht">#VerlarisMeuLar</div>
+    </div>
+    <div class="aplic-card aplic-2">
+      <div class="aplic-lbl">Coletivo</div>
+      <div class="aplic-txt">O cliente que conquistou a chave Verlaris vira embaixador natural. Cada depoimento real é mais poderoso que qualquer anúncio pago. A marca incentiva e amplifica essas histórias organicamente.</div>
+      <div class="ht">#VerlarisMaceio</div>
+    </div>
+    <div class="aplic-card aplic-3">
+      <div class="aplic-lbl">Resultado</div>
+      <div class="aplic-txt">Transforma o consumo em movimento. O cliente não compra um apartamento — entra para a história de uma família que sempre construiu para o povo de Maceió.</div>
+      <div class="ht">#VerÉConstruir</div>
+    </div>
+  </div>
+  <span class="slide-num">18</span>
+</section>
+
+<!-- ══ SEÇÃO K ════════════════════════════════════════ -->
+<section id="sK" class="sec-header bg-navy">
+  <div class="sec-letter">K</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção K</span>
+    <div class="display d-xl c-white sec-title">Mensagem</div>
+    <p class="sec-desc">Público-alvo, persona, tom de voz e diálogos por canal.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">19</span>
+</section>
+
+<!-- SLIDE 21 -->
+<section id="s21">
+  <span class="slide-tag">Slide 21 · Persona</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:16px">Maria das Graças</div>
+  <div class="pers-layout">
+    <div class="persona-card">
+      <div class="persona-name">Maria das Graças</div>
+      <div class="persona-bio">Técnica de enfermagem. Casada, dois filhos. Mora de aluguel há 7 anos no Benedito Bentes. Já tentou financiamento uma vez e não foi aprovada. Decidiu tentar de novo depois de ver uma colega conquistar o apartamento próprio pelo MCMV.</div>
+      <div class="persona-data">
+        <div class="pd-item"><span class="pd-lbl">Idade</span><span class="pd-val">34 anos</span></div>
+        <div class="pd-item"><span class="pd-lbl">Ocupação</span><span class="pd-val">Técnica de Enfermagem</span></div>
+        <div class="pd-item"><span class="pd-lbl">Localização</span><span class="pd-val">Maceió, AL</span></div>
+        <div class="pd-item"><span class="pd-lbl">Estado Civil</span><span class="pd-val">Casada, 2 filhos</span></div>
+        <div class="pd-item"><span class="pd-lbl">Renda</span><span class="pd-val">3–5 SM · CLT</span></div>
+        <div class="pd-item"><span class="pd-lbl">Perfil</span><span class="pd-val">MCMV Faixa 2</span></div>
+      </div>
+      <div class="persona-quote">"Eu quero que meus filhos tenham um endereço que seja deles."</div>
+    </div>
+    <div class="persona-attrs">
+      <div class="pa-card"><div class="pa-lbl">Motivações</div><div class="pa-val">Segurança para os filhos · Fim do aluguel · Orgulho familiar · Sentir que venceu</div></div>
+      <div class="pa-card"><div class="pa-lbl">Medos</div><div class="pa-val">Não ser aprovada novamente · Cair em golpe · Endividar demais · Perder o apartamento</div></div>
+      <div class="pa-card"><div class="pa-lbl">Como decide</div><div class="pa-val">Pergunta para amigos · Pesquisa no Instagram · Confia em quem já comprou · Decide com o marido</div></div>
+      <div class="pa-card"><div class="pa-lbl">Comportamento digital</div><div class="pa-val">WhatsApp como canal principal · Instagram para pesquisa · Grupos de bairro para recomendações</div></div>
+      <div class="persona-insight"><strong>O que a Verlaris representa para ela:</strong> A construtora que vai olhar para ela — não para a planilha de renda. Que vai escutar a história antes de calcular o financiamento. Que vai fazer ela sentir que pode, que merece, que chegou.</div>
+    </div>
+  </div>
+  <span class="slide-num">21</span>
+</section>
+
+<!-- SLIDE 22 -->
+<section id="s22">
+  <span class="slide-tag">Slide 22 · Tom de Voz e Diálogos</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:16px">Como a Verlaris fala.</div>
+  <div class="tom-layout">
+    <div>
+      <div class="tom-meta">Como conversar com um familiar que entende de construção e está do seu lado — próximo, firme, encorajador e orgulhoso da origem.</div>
+      <div class="tom-attrs">
+        <div class="tom-item"><div class="tom-name">Próximo e claro</div><div class="tom-desc">Fala como gente. Sem juridiquês, sem promessa vaga, sem complexidade desnecessária. O cliente entende tudo sem precisar de intermediário.</div></div>
+        <div class="tom-item"><div class="tom-name">Encorajador</div><div class="tom-desc">O cliente já batalhou muito. A Verlaris reconhece isso e empurra para frente — nunca cria urgência artificial ou pressão emocional falsa.</div></div>
+        <div class="tom-item"><div class="tom-name">Orgulhoso da origem</div><div class="tom-desc">Não tem vergonha de ser de Maceió, de ser MCMV, de atender quem o mercado subestima. É exatamente aí que está o orgulho.</div></div>
+        <div class="tom-item"><div class="tom-name">Firme na promessa</div><div class="tom-desc">O que diz, cumpre. Não usa 'últimas unidades' nem 'desconto imperdível'. Usa fatos, histórias reais e cronogramas verificáveis.</div></div>
+      </div>
+      <div class="tom-nao"><strong>Nosso tom NÃO é:</strong> frio, burocrático, exagerado ou genérico. Não usamos linguagem de financeira popular nem comunicamos como panfleto de imobiliária.</div>
+    </div>
+    <div>
+      <div class="caption c-gold" style="margin-bottom:16px">Diálogos por canal</div>
+      <div class="dial-grid">
+        <div class="dial-item"><div class="dial-canal">WhatsApp</div><div class="dial-msg">"Oi! Vi que você se interessou pela Verlaris. Aqui a gente não complica — manda sua renda e te falo em 5 minutos se você tem perfil. Sem enrolação, sem compromisso."</div></div>
+        <div class="dial-item"><div class="dial-canal">Instagram</div><div class="dial-msg">Conteúdo de conquista: "A Natália assinou ontem. 7 anos de aluguel. A chave finalmente é dela." — histórias reais, sem filtro.</div></div>
+        <div class="dial-item"><div class="dial-canal">Evento</div><div class="dial-msg">"Somos a Verlaris. Nascemos de uma família que construiu por três gerações em Maceió. Pode sentar, a gente resolve junto."</div></div>
+        <div class="dial-item"><div class="dial-canal">E-mail</div><div class="dial-msg">Assunto: "Sua vez de ter o seu." | Corpo: "Você já batalhou muito. A Verlaris está aqui para fazer esse próximo passo ser mais simples do que parece."</div></div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">22</span>
+</section>
+
+<!-- ══ SEÇÃO L ════════════════════════════════════════ -->
+<section id="sL" class="sec-header bg-navy">
+  <div class="sec-letter">L</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção L</span>
+    <div class="display d-xl c-white sec-title">Comunicação</div>
+    <p class="sec-desc">Slogans e o manifesto completo da marca.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">24</span>
+</section>
+
+<!-- SLIDE 25 — MANIFESTO -->
+<section id="s25">
+  <div class="man-layout">
+    <div class="man-left">
+      <div class="caption c-gold" style="margin-bottom:16px">Manifesto</div>
+      <div class="display d-lg c-white" style="margin-bottom:8px">Ver o lar é o primeiro ato de construir.</div>
+      <div class="display d-sm c-gold" style="font-style:italic;font-weight:300;margin-top:8px">A Verlaris.</div>
+    </div>
+    <div class="man-right">
+      <p class="man-p">Por muito tempo, construir um lar para quem mais precisava foi tratado como burocracia, como número, como parcela. As construtoras falavam de desconto quando o cliente queria falar de sonho.</p>
+      <p class="man-p">No meio de um mercado que grita preço, havia algo errado. Mas nós acreditamos que quem batalhou anos pagando aluguel, quem ouviu não do banco e voltou para tentar de novo, quem economizou centavo por centavo — essa pessoa merece uma construtora que a veja.</p>
+      <p class="man-p">A Verlaris nasce de três gerações de uma família que sempre construiu — o avô que erguia estruturas na Marinha, o pai que vendia o material, os filhos que profissionalizaram o ofício. Uma família com brasão português, com parente que libertou pessoas e deu nome a uma cidade.</p>
+      <p class="man-p">Nosso movimento é para os que batalham. Para os que acordam cedo, para os que não desistem, para os que um dia olharam para um terreno e viram — mesmo sem saber — um lar.</p>
+      <p class="man-final">Nós não vendemos apartamentos. Nós cumprimos destinos. Seja bem-vindo à Verlaris — onde ver é o começo de tudo.</p>
+    </div>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">25</span>
+</section>
+
+<!-- ══ SEÇÃO M ════════════════════════════════════════ -->
+<section id="sM" class="sec-header bg-navy">
+  <div class="sec-letter">M</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção M</span>
+    <div class="display d-xl c-white sec-title">Análise<br>Competitiva</div>
+    <p class="sec-desc">Matriz de posicionamento, análise cromática e a lacuna identificada para a Verlaris.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">26</span>
+</section>
+
+<!-- SLIDE 27 — MATRIZ -->
+<section id="s27">
+  <span class="slide-tag">Slide 27 · Matriz de Posicionamento</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:16px">Onde a Verlaris se posiciona.</div>
+  <div class="mat-layout">
+    <div class="mat-chart">
+      <div class="mat-ax-x"></div>
+      <div class="mat-ax-y"></div>
+      <span class="mat-lbl t">ASPIRACIONAL</span>
+      <span class="mat-lbl b">POPULAR</span>
+      <span class="mat-lbl l">HUMANA</span>
+      <span class="mat-lbl r">FRIA</span>
+      <div class="mat-dot" style="left:24%;top:70%"><div class="dot-c" style="width:32px;height:32px;background:#E84848;color:#fff">T</div><span class="dot-n" style="color:var(--gray);font-size:9px">Telesil</span></div>
+      <div class="mat-dot" style="left:28%;top:58%"><div class="dot-c" style="width:32px;height:32px;background:#888;color:#fff">R</div><span class="dot-n" style="color:var(--gray);font-size:9px">Rocha</span></div>
+      <div class="mat-dot" style="left:68%;top:36%"><div class="dot-c" style="width:32px;height:32px;background:#444;color:#fff">V</div><span class="dot-n" style="color:var(--gray);font-size:9px">Vella</span></div>
+      <div class="mat-dot" style="left:63%;top:44%"><div class="dot-c" style="width:32px;height:32px;background:#222;color:#fff">L</div><span class="dot-n" style="color:var(--gray);font-size:9px">Lavie</span></div>
+      <div class="mat-dot" style="left:70%;top:20%">
+        <div class="dot-c" style="width:44px;height:44px;background:var(--navy);border:2px solid var(--gold);flex-direction:column;gap:1px"><span style="font-size:8px;color:var(--gold);font-weight:700;text-align:center;line-height:1.2">VER<br>LARIS</span></div>
+        <span class="dot-n" style="color:var(--navy);font-weight:700;font-size:10px">★ Verlaris</span>
+      </div>
+    </div>
+    <div class="mat-legend">
+      <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase">Concorrentes mapeados</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#E84848"></div><div class="leg-info"><strong>Telesil</strong> — Popular / Institucional. Líder em volume, comunicação agressiva de preço.</div></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#888"></div><div class="leg-info"><strong>Rocha</strong> — Popular / Semi-humana. Identificação familiar, mas sem posicionamento visual.</div></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#444"></div><div class="leg-info"><strong>Vella</strong> — Aspiracional / Fria. Estética mais neutra, mas sem calor humano.</div></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#222"></div><div class="leg-info"><strong>Lavie</strong> — Aspiracional / Semi-fria. Tom premium mas distante para o público Faixa 2.</div></div>
+      <div class="oport-box">
+        <div class="oport-lbl">Oportunidade identificada</div>
+        <div class="oport-txt">Quadrante Aspiracional + Humana completamente vazio em Maceió. A Verlaris é a primeira marca a ocupá-lo com intenção estratégica.</div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">27</span>
+</section>
+
+<!-- SLIDE 28 — CROMÁTICA -->
+<section id="s28">
+  <span class="slide-tag">Slide 28 · Análise Cromática</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:8px">As cores do mercado — e a lacuna.</div>
+  <div class="crom-grid">
+    <div class="crom-card">
+      <div class="crom-swatch" style="background:linear-gradient(135deg,#E84848,#FF6B35)"></div>
+      <div class="crom-rank">1ª dominante</div>
+      <div class="crom-cor">Vermelho / Laranja</div>
+      <div class="crom-brands">Telesil, Rocha — comunica desconto e urgência.</div>
+    </div>
+    <div class="crom-card">
+      <div class="crom-swatch" style="background:linear-gradient(135deg,#EEEEEE,#CCCCCC)"></div>
+      <div class="crom-rank">2ª dominante</div>
+      <div class="crom-cor">Cinza / Branco</div>
+      <div class="crom-brands">Vella — estética mais neutra mas sem calor.</div>
+    </div>
+    <div class="crom-card">
+      <div class="crom-swatch" style="background:linear-gradient(135deg,#111111,#333333)"></div>
+      <div class="crom-rank">3ª dominante</div>
+      <div class="crom-cor">Preto</div>
+      <div class="crom-brands">Lavie — premium mas distante para Faixa 2.</div>
+    </div>
+    <div class="crom-card oport">
+      <div class="crom-swatch" style="background:linear-gradient(135deg,#0D2B45,#C8A96E)"></div>
+      <div class="crom-rank">Oportunidade</div>
+      <div class="crom-cor">Azul Marinho + Dourado</div>
+      <div class="crom-brands">Nenhuma construtora MCMV de Maceió usa essa paleta.</div>
+      <div class="crom-insight">Soa premium sem ser distante. Conecta com o brasão português da família Rocha. Espaço visual completamente inexplorado.</div>
+    </div>
+  </div>
+  <span class="slide-num">28</span>
+</section>
+
+<!-- ══ SEÇÃO N ════════════════════════════════════════ -->
+<section id="sN" class="sec-header bg-navy">
+  <div class="sec-letter">N</div>
+  <div class="sec-info">
+    <span class="sec-label c-gold">Seção N</span>
+    <div class="display d-xl c-white sec-title">Comunidade</div>
+    <p class="sec-desc">Estrutura, símbolos, rituais, palavras sagradas e o inimigo da marca.</p>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.2)">30</span>
+</section>
+
+<!-- SLIDE 31 — ESTRUTURA -->
+<section id="s31">
+  <span class="slide-tag">Slide 31 · Estrutura da Comunidade</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:16px">Três círculos de pertencimento.</div>
+  <div class="com-grid">
+    <div class="com-card com-1">
+      <div class="com-head"><span class="com-hname">Círculo Interno</span><span class="com-badge">Núcleo</span></div>
+      <div class="com-body">
+        <div class="com-item">Mozartt e Marianna Balbino — fundadores e guardiões da história</div>
+        <div class="com-item">Equipe técnica e de vendas treinada na cultura da marca</div>
+        <div class="com-item">Primeiros clientes — os que abriram caminho e contam a história</div>
+        <div class="com-footer">Esse núcleo dá voz, história e legitimidade para a comunidade Verlaris.</div>
+      </div>
+    </div>
+    <div class="com-card com-2">
+      <div class="com-head"><span class="com-hname">Círculo Ampliado</span><span class="com-badge">Clientes e fãs</span></div>
+      <div class="com-body">
+        <div class="com-item">Famílias que conquistaram o primeiro imóvel pela Verlaris</div>
+        <div class="com-item">Trabalhadores formais e autônomos de Maceió e região</div>
+        <div class="com-item">Quem recomendou para vizinhos, parentes e colegas de trabalho</div>
+        <div class="com-footer">Eles compartilham, defendem e expandem a comunidade.</div>
+      </div>
+    </div>
+    <div class="com-card com-3">
+      <div class="com-head"><span class="com-hname">Audiência</span><span class="com-badge">Potenciais</span></div>
+      <div class="com-body">
+        <div class="com-item">Quem ainda paga aluguel e acompanha a marca nas redes</div>
+        <div class="com-item">Parceiros locais: corretores, correspondentes, influenciadores</div>
+        <div class="com-item">Prefeitura e agentes do programa MCMV em Alagoas</div>
+        <div class="com-footer">Precisam ser nutridos pela mensagem até migrarem para o círculo ampliado.</div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">31</span>
+</section>
+
+
+<!-- SLIDE 33 — RITUAIS -->
+<section id="s33">
+  <span class="slide-tag">Slide 33 · Rituais da Marca</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:16px">Três rituais que criam pertencimento.</div>
+  <div class="rit-grid">
+    <div class="rit-item">
+      <div class="rit-name">A Entrega da Chave</div>
+      <div class="rit-col"><div class="rit-lbl">Descrição</div><div class="rit-txt">Entrega com momento fotográfico e carta manuscrita assinada pelos fundadores para cada família que conquista o imóvel.</div></div>
+      <div class="rit-col"><div class="rit-lbl">Frequência</div><div class="rit-txt">A cada entrega de unidade.</div></div>
+      <div class="rit-col"><div class="rit-lbl">Significado</div><div class="rit-txt">Transforma um ato burocrático em um momento histórico. Cria conteúdo orgânico genuíno e embaixadores naturais.</div></div>
+    </div>
+    <div class="rit-item">
+      <div class="rit-name">O Primeiro Post do Endereço</div>
+      <div class="rit-col"><div class="rit-lbl">Descrição</div><div class="rit-txt">Incentivo para o cliente postar a primeira foto no novo endereço com #VerlarisMeuLar, recebendo um presente surpresa.</div></div>
+      <div class="rit-col"><div class="rit-lbl">Frequência</div><div class="rit-txt">Espontânea — todo cliente novo é convidado.</div></div>
+      <div class="rit-col"><div class="rit-lbl">Significado</div><div class="rit-txt">Celebra publicamente a conquista. Gera prova social orgânica. Faz o cliente sentir que a marca está comemorando junto.</div></div>
+    </div>
+    <div class="rit-item">
+      <div class="rit-name">A Sessão de Clareza</div>
+      <div class="rit-col"><div class="rit-lbl">Descrição</div><div class="rit-txt">Toda simulação começa com uma conversa de 10 minutos sobre a história do cliente, não sobre renda. A equipe escuta antes de calcular.</div></div>
+      <div class="rit-col"><div class="rit-lbl">Frequência</div><div class="rit-txt">Em todo primeiro atendimento.</div></div>
+      <div class="rit-col"><div class="rit-lbl">Significado</div><div class="rit-txt">Diferencia a Verlaris desde o primeiro contato. Estabelece confiança antes da proposta.</div></div>
+    </div>
+  </div>
+  <span class="slide-num">33</span>
+</section>
+
+<!-- SLIDE 34 — PALAVRAS SAGRADAS -->
+<section id="s34">
+  <span class="slide-tag">Slide 34 · Palavras Sagradas</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:16px">Os quatro códigos da marca.</div>
+  <div class="pal-grid">
+    <div class="pal-card pal-1">
+      <div class="pal-word">VER</div>
+      <div><div class="pal-lbl">Significado</div><div class="pal-txt">A visão que antecipa. Enxergar o lar antes de construí-lo. O dom da família Rocha.</div></div>
+      <div><div class="pal-lbl">Como usar</div><div class="pal-txt">"Você viu este apartamento? A Verlaris também viu — antes de qualquer tijolo."</div></div>
+    </div>
+    <div class="pal-card pal-2">
+      <div class="pal-word">LARES</div>
+      <div><div class="pal-lbl">Significado</div><div class="pal-txt">Plural de propósito. Não construímos unidades — construímos histórias de família.</div></div>
+      <div><div class="pal-lbl">Como usar</div><div class="pal-txt">"Cada lar Verlaris tem uma família dentro. Qual vai ser o seu?"</div></div>
+    </div>
+    <div class="pal-card pal-3">
+      <div class="pal-word">BATALHA</div>
+      <div><div class="pal-lbl">Significado</div><div class="pal-txt">O que o cliente viveu antes de chegar. Reconhecer a batalha é o primeiro ato de respeito.</div></div>
+      <div><div class="pal-lbl">Como usar</div><div class="pal-txt">"Você batalhou. Agora é hora de chegar. A Verlaris está aqui."</div></div>
+    </div>
+    <div class="pal-card pal-4">
+      <div class="pal-word">CHEGADA</div>
+      <div><div class="pal-lbl">Significado</div><div class="pal-txt">O momento da chave. O alívio. O orgulho. A chegada que a família inteira vai lembrar.</div></div>
+      <div><div class="pal-lbl">Como usar</div><div class="pal-txt">"A Verlaris é o porto onde toda travessia termina."</div></div>
+    </div>
+  </div>
+  <span class="slide-num">34</span>
+</section>
+
+<!-- SLIDE 35 — INIMIGO -->
+<section id="s35">
+  <span class="slide-tag">Slide 35 · O Inimigo da Marca</span>
+  <div class="display d-md c-navy" style="margin-top:40px;margin-bottom:16px">O que a Verlaris combate.</div>
+  <div class="inim-layout">
+    <div>
+      <div class="inim-intro">
+        <div class="inim-title">O Mercado que Trata Sonho como Burocracia</div>
+        <div class="inim-desc">O inimigo da Verlaris é a mentalidade que reduz o sonho da casa própria a uma planilha de renda, a uma linha de parcelinha, a um panfleto de desconto. É o mercado que fala com o cliente Faixa 2 como se ele fosse um número de simulação — não uma família com história.</div>
+      </div>
+    </div>
+    <div class="inim-grid">
+      <div class="inim-item">
+        <div class="inim-n">01</div>
+        <div class="inim-t">A comunicação de panfleto</div>
+        <div class="inim-p">Preço em destaque, 'última unidade', 'aproveite'.</div>
+        <div class="inim-mot">A Verlaris existe porque o cliente merece mais do que propaganda de desconto.</div>
+      </div>
+      <div class="inim-item">
+        <div class="inim-n">02</div>
+        <div class="inim-t">O atendimento de financeira</div>
+        <div class="inim-p">Perguntas de renda antes de perguntas sobre a vida.</div>
+        <div class="inim-mot">A Verlaris ouve antes de calcular.</div>
+      </div>
+      <div class="inim-item">
+        <div class="inim-n">03</div>
+        <div class="inim-t">A estética genérica</div>
+        <div class="inim-p">Logos em laranja, fontes impactantes, banners de fachada idênticos a qualquer banco.</div>
+        <div class="inim-mot">A Verlaris tem identidade própria que o cliente reconhece à distância.</div>
+      </div>
+      <div class="inim-item">
+        <div class="inim-n">04</div>
+        <div class="inim-t">O silêncio depois da venda</div>
+        <div class="inim-p">Construtora que some após a assinatura.</div>
+        <div class="inim-mot">A Verlaris está presente desde a primeira conversa até a entrega das chaves — e além.</div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">35</span>
+</section>
+
+<!-- ══ NAMING ══════════════════════════════════════════ -->
+<section id="snaming">
+  <div class="nam-layout">
+    <div class="nam-left">
+      <div class="caption c-gold" style="margin-bottom:16px">Naming · Processo e Decisão</div>
+      <div class="nam-brand">VERLARIS</div>
+      <div class="nam-etim">ver + lares + -is</div>
+      <div class="nam-tag">A construtora que vê os lares antes de construí-los.<br>INPI livre · Classes 36 e 37 · Registro proprietário.</div>
+    </div>
+    <div class="nam-right">
+      <div class="caption c-gold" style="margin-bottom:12px">Arquitetura do Nome</div>
+      <div class="nam-etim-cards">
+        <div class="nam-ec"><div class="nam-ec-part">VER</div><div class="nam-ec-desc">Do latim vidēre — enxergar, antecipar, perceber antes. A Verlaris vê o lar onde outros veem terreno.</div></div>
+        <div class="nam-ec"><div class="nam-ec-part">LARES</div><div class="nam-ec-desc">Do latim lares — protetores do lar. Plural: não um apartamento, mas múltiplas famílias e histórias.</div></div>
+        <div class="nam-ec"><div class="nam-ec-part">-IS</div><div class="nam-ec-desc">Soa como Polaris, Solaris — coordenadas celestes que orientam navegadores perdidos.</div></div>
+      </div>
+      <div class="caption c-gold" style="margin-bottom:12px;margin-top:4px">Processo de Naming</div>
+      <div class="nam-proc">
+        <div class="nam-row"><span class="nam-lbl">Duração</span><span class="nam-val">6 semanas de processo estruturado</span></div>
+        <div class="nam-row"><span class="nam-lbl">Método</span><span class="nam-val">Extração de essência → Word mapping → 200+ candidatos → INPI → NAMI → Decisão</span></div>
+        <div class="nam-row"><span class="nam-lbl">INPI</span><span class="nam-val">Verlaris livre nas classes 36 e 37 — registro proprietário</span></div>
+        <div class="nam-row"><span class="nam-lbl">Decisão</span><span class="nam-val">Mozartt: "imponência e premium" · Marianna: sonoridade e conceito de ver o lar</span></div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num" style="color:rgba(255,255,255,.22)">NAMING</span>
+</section>
+
+<!-- ══ ENCERRAMENTO ═══════════════════════════════════ -->
+<section id="senc">
+  <div class="enc-title">VERLARIS</div>
+  <div class="enc-tag">Ver o lar é o primeiro ato de construir.</div>
+  <div class="enc-div"></div>
+  <div class="enc-studio">RODRI Brand Studio · Fortaleza, Ceará · 2026</div>
+</section>
+
+<script>
+// Scroll reveal leve
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.anal-card, .band-card, .ent-card, .sim-card, .pal-card, .gc-card, .com-card').forEach((el, i) => {
+        el.style.animationDelay = `${i * 0.08}s`;
+        el.classList.add('reveal');
+      });
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('section').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
